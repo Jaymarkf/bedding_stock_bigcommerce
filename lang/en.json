@@ -1,7 +1,11 @@
 {
     "header": {
         "welcome_back": "Welcome back, {name}",
-        "skip_to_main": "Skip to main content"
+        "skip_to_main": "Skip to main content",
+        "treat": "TREAT AND TREAT | $250 OFF ON ALL MATTRESSES.",
+        "use_coupon_code": "USE COUPON CODE: ",
+        "coupon_code": "DOUBLETREATS"
+
     },
     "footer": {
         "title": "Footer Start",

@@ -192,7 +192,7 @@
     font-weight: fontWeight("bold");
     padding: spacing("half") 0;
     text-decoration: none;
-    text-transform: uppercase;
+    //text-transform: uppercase;
 
     &.has-subMenu {
         .navPages-list:not(.navPages-list-depth-max) & {

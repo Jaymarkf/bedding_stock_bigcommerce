@@ -115,11 +115,22 @@
 
 <!--</nav>-->
 
-<div class="row px-5" style="background-color:#0c1221">
-    <div class="col"></div>
-    <div class="col"></div>
-    <div class="col">
-        <nav class="navUser" >
+<div class="row-top row px-5 m-0" style="background-color:#0c1221">
+    <div class="col px-3">
+        <nav class="navUser text-right navPages-action">
+            <span style="font-weight:500 !important;color:#ff993e">
+                {{lang 'header.treat' }}
+            </span>
+        </nav>
+    </div>
+    <div class="col px-3">
+        <nav class="navUser text-center navPages-action">
+            <span style="font-weight:500 !important;color:#ff993e">{{lang 'header.use_coupon_code'}}</span>
+            <span style="color:#ff993e;font-weight:900 !important;">{{lang 'header.coupon_code' }}</span>
+        </nav>
+    </div>
+    <div class="col text-center pr-5">
+        <nav class="navUser pr-5">
             {{> components/common/currency-selector}}
 
             <ul class="navUser-section navUser-section--alt">
@@ -182,7 +193,7 @@
                 </li>
                 {{/if}}
             </ul>
-            <div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close>
+            <div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close >
                 {{> components/common/quick-search}}
             </div>
 

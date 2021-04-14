@@ -1,8 +1,14 @@
-<nav class="navPages">
+<nav class="navPages" style="position:fixed;min-width:100%;height:auto;">
+
     <div class="navPages-quickSearch">
         {{> components/common/quick-search name='nav-menu-quick-search'}}
     </div>
-    <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}}">
+    <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}} py-2">
+        <li class="navPages-item navPages-item-page">
+            <div class="header-logo header-logo--{{theme_settings.logo-position}}" style="margin:0px !important;padding-top:5px;">
+                 {{> components/common/store-logo}}
+            </div>
+        </li>
         {{#each categories}}
             <li class="navPages-item">
             {{#if ../theme_settings.navigation_design '===' 'simple'}}
@@ -13,10 +19,11 @@
             {{/if}}
             </li>
         {{/each}}
+
         {{#unless theme_settings.hide_content_navigation}}
             {{#each pages}}
                  <li class="navPages-item navPages-item-page">
-                     <a class="navPages-action{{#if name '==' ../page.title}} activePage{{/if}}"
+                     <a class="navPages-action {{#if name '==' ../page.title}} activePage{{/if}}"
                         href="{{url}}"
                         aria-label="{{name}}"
                      >

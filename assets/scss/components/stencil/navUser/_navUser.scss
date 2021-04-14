@@ -15,7 +15,11 @@
 //    setting the previous styles to medium breakpoint and adjusts for nudge in (7).
 //
 // -----------------------------------------------------------------------------
-
+.row-top{
+    @media (max-width: $screen-medium){
+        display:none;
+    }
+}
 .navUser {
     @include nav($style: "navBar", $wrapper: "nav");
     @include verticalPositionMiddle("absolute");
@@ -278,18 +282,19 @@
             bottom: 0;
             left: 50%;
             position: absolute;
+            top:0;
             transform: translateX(-50%);
         }
     }
 }
 
 .dropdown--quickSearch {
-    background-color: $dropdown--quickSearch-backgroundColor;
-    padding: spacing("single") 0;
+    //background-color: $dropdown--quickSearch-backgroundColor;
+    padding: 0;
     display: none;
 
     @include breakpoint("small") {
-        padding: spacing("double");
+        //padding: spacing("double");
     }
 
     &.is-open {
@@ -313,7 +318,7 @@
     }
 
     .form-input {
-        font-size: fontSize("small");
+        //font-size: fontSize("small");
         height: unset;
     }
 
