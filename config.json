@@ -412,6 +412,7 @@
         "body-font": "Google_Source+Sans+Pro_400",
         "headings-font": "Google_Roboto_400",
         "color-textBase": "#ffffff",
+        "color-very-top-header": "#0c1221",
         "color-textBase--hover": "#bbbbbb",
         "color-textBase--active": "#999999",
         "color-textSecondary": "#dddddd",

@@ -24,6 +24,7 @@
     width: 100%; // 4
     z-index: zIndex("lowest"); // 5.
 
+
     @include breakpoint("medium") {
         padding: 0 spacing("single");
         position: relative;
@@ -69,6 +70,7 @@
 .navUser-section {
     @include breakpoint("medium") {
         position: relative; // 7
+
     }
 }
 

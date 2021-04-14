@@ -157,9 +157,9 @@
         "and": "and",
         "compare": "Compare",
         "change": "Change",
-        "sign_up": "Register",
-        "login": "Sign in",
-        "logout": "Sign out",
+        "sign_up": "REGISTER",
+        "login": "SIGN IN",
+        "logout": "SIGN OUT",
         "account": "Account",
         "cart": "Cart",
         "search": "Search",
@@ -206,7 +206,8 @@
             "10": "Oct",
             "11": "Nov",
             "12": "Dec"
-        }
+        },
+        "wishlist": "WISHLIST"
     },
     "compare": {
         "button": "Compare Products",
