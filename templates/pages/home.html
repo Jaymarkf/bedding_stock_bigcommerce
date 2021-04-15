@@ -27,21 +27,39 @@ blog:
 
 <div class="main full">
 
-    {{#if products.featured}}
-        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
-    {{/if}}
-    {{{region name="home_below_featured_products"}}}
+<!--    {{#if products.featured}}-->
+<!--        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}-->
+<!--    {{/if}}-->
+<!--    {{{region name="home_below_featured_products"}}}-->
 
-    {{#if products.top_sellers}}
-        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
-    {{/if}}
-    {{{region name="home_below_top_products"}}}
+<!--    {{#if products.top_sellers}}-->
+<!--        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}-->
+<!--    {{/if}}-->
+<!--    {{{region name="home_below_top_products"}}}-->
 
-    {{#if products.new}}
-        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
-    {{/if}}
-    {{{region name="home_below_new_products"}}}
+<!--    {{#if products.new}}-->
+<!--        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}-->
+<!--    {{/if}}-->
+<!--    {{{region name="home_below_new_products"}}}-->
+<div class="row new-certificates text-center px-5">
+    <div class="col">
+            <div class="head-certificate">
+                <img src="img-fluid" src="{{cdn 'assets/img/certipur-us.png'}}">
+            </div>
+            <div class="certificate-description">
 
+            </div>
+    </div>
+    <div class="col">
+
+    </div>
+    <div class="col">
+
+    </div>
+    <div class="col">
+
+    </div>
+</div>
 
 </div>
 {{/partial}}
