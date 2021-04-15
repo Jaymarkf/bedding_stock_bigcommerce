@@ -1,4 +1,4 @@
-<nav class="navPages" style="position:fixed;min-width:100%;height:auto;">
+<nav class="navPages" style="position:fixed;min-width:100%;height:auto;padding:20px; ">
 
     <div class="navPages-quickSearch">
         {{> components/common/quick-search name='nav-menu-quick-search'}}
@@ -9,6 +9,7 @@
                  {{> components/common/store-logo}}
             </div>
         </li>
+
         {{#each categories}}
             <li class="navPages-item">
             {{#if ../theme_settings.navigation_design '===' 'simple'}}
@@ -32,6 +33,20 @@
                  </li>
              {{/each}}
         {{/unless}}
+
+            <li class="navPages-item navPages-item-page">
+                <div class="navUser-item--cart">
+                    <a
+                            style="letter-spacing: 3px"
+                            data-dropdown="cart-preview-dropdown"
+                            href="{{urls.cart}}">
+
+                        <span class="cart-hover navUser-item--cart navPages-action fa fa-shopping-cart animation-element wiggle duration-1500 infinite" style="line-height: 25px;">   {{lang 'cart.my_cart'}} <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity">0</span></span>
+                    </a>
+                    <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
+                </div>
+            </li>
+
     </ul>
     <ul class="navPages-list navPages-list--user">
         {{#if currency_selector.currencies.length '>' 1}}

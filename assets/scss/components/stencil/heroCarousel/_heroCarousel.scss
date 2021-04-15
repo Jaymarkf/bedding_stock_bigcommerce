@@ -12,7 +12,7 @@
 // 3. Allows image to scale on large screens while preventing the top and bottom
 //    from becoming cut off.
 // -----------------------------------------------------------------------------
-
+@font-face {font-family: "Tw Cen MT Condensed Extra Bold"; src: url("//db.onlinewebfonts.com/t/6f30da158731ad84745d00cc96e35e5e.eot"); src: url("//db.onlinewebfonts.com/t/6f30da158731ad84745d00cc96e35e5e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/6f30da158731ad84745d00cc96e35e5e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/6f30da158731ad84745d00cc96e35e5e.woff") format("woff"), url("//db.onlinewebfonts.com/t/6f30da158731ad84745d00cc96e35e5e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/6f30da158731ad84745d00cc96e35e5e.svg#Tw Cen MT Condensed Extra Bold") format("svg"); }
 .heroCarousel {
     width: 1px;
     min-width: 100%;
@@ -25,11 +25,11 @@
 
     &.slick-initialized {
         @include breakpoint("small") {
-            max-height: remCalc(400px);            
+            max-height: 100%;
         }
 
         @include breakpoint("medium") {
-            max-height: remCalc(600px);            
+            max-height: 100%;
         }
     }
 
@@ -103,6 +103,18 @@
             background-size: contain;
         }    
     }
+    .btn-shop{
+        background-color:#3fe3ec;
+        border-color: #3fe3ec;
+        &:hover{
+            background-color:#32bac1;
+            border-color:#32bac1;
+            color:white;
+            font-weight:600;
+        }
+    }
+
+
 }
 
 .heroCarousel-slide {
@@ -164,24 +176,27 @@
 
 .heroCarousel-content {
     background-color: rgba($carousel-bgColor, 1);
-    padding: spacing("half") spacing("single") (spacing("double"));
-    text-align: center;
+    //padding: spacing("half") spacing("single") (spacing("double"));
+    padding:2.25rem;
+    text-align: left;
 
     @include breakpoint("small") {
         @include carouselOpaqueBackgrounds;
         width: remCalc(700px);
         padding: spacing("single") * 1.5;
-        width: 70%;
+        width:420px;
         background-color: rgba($carousel-bgColor, 0.9);
-        left: 0;
+        left: 10%;
         padding: spacing("single");
-        margin: 0 auto;
+        margin: 0;
         position: absolute;
         right: 0;
         top: 50%;
         transform: translateY(-50%);
         max-height: 80%;
-        overflow: auto;
+        line-height:40px;
+        background:transparent;
+        //overflow: hidden;
 
         &.heroCarousel-content--empty {
             background-color: transparent;
@@ -190,12 +205,20 @@
 }
 
 .heroCarousel-title {
-    color: $carousel-title-color;
+    //color: $carousel-title-color;
+
     font-size: fontSize("small");
     margin-top: 0;
+    font-family: "Tw Cen MT Condensed Extra Bold" !important;
 
     @include breakpoint("medium") {
         font-size: fontSize("hero");
+        color:white;
+        text-shadow:2px 1px 8px black;
+    }
+    @include breakpoint("small"){
+        color:white;
+        text-shadow:2px 1px 8px black;
     }
 }
 
@@ -205,10 +228,17 @@
 
     @include breakpoint("small") {
         font-size: fontSize("smallest");
+        line-height:20px;
+        color:white;
+        text-shadow: 1px 1px black;
+
     }
 
     @include breakpoint("medium") {
         font-size: fontSize("smaller");
+        line-height:20px;
+        color:white;
+        text-shadow: 1px 1px black;
     }
 }
 

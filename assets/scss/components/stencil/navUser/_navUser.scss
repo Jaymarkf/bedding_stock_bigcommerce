@@ -339,10 +339,9 @@
 // -----------------------------------------------------------------------------
 
 .countPill {
-    background-color: stencilColor("navUser-indicator-backgroundColor");
-    border-radius: 50%;
+    //background-color: stencilColor("navUser-indicator-backgroundColor");
     color: color("whites", "bright");
-    display: none;
+    //display: none;
     font-size: fontSize("tiny");
     font-weight: fontWeight("bold");
     height: 20px; // 1
@@ -350,6 +349,8 @@
     margin-left: spacing("eighth");
     text-align: center;
     width: 20px; // 1
+    border:1px solid rgba(255,255,255,.4);
+    padding:4px 5px;
 }
 
 .countPill--positive {

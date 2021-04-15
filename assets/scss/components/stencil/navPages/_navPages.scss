@@ -65,6 +65,11 @@
 //
 // Top level Pages navigation list styles
 // -----------------------------------------------------------------------------
+.very-top{
+    @include breakpoint("medium"){
+        font-size: 1vw;
+    }
+}
 
 .navPages {
     background-color: $navPages-backgroundColor;
@@ -75,11 +80,13 @@
     @include breakpoint("medium") {
         @include grid-row(); // 1
         @include nav($style: "navBar", $wrapper: "nav");
-        background: none;
+
         font-size: 0; // 1
         overflow-y: visible;
         padding: 0;
         text-align: center;
+        background: linear-gradient(to bottom,#2d2d2d,transparent);
+
     }
 
     ul {
@@ -184,7 +191,9 @@
         }
     }
 }
-
+.cart-hover:hover{
+    background-color:#cc1b1b;
+}
 .navPages-action {
     color: stencilColor("navPages-color");
     display: block;
@@ -214,15 +223,27 @@
     @include breakpoint("medium") {
         display: inline-block;
         padding: spacing("half") (spacing("half") + spacing("quarter")) (spacing("half") + spacing("quarter"));
-
+          font-size:1.2vw !important;
         &.is-open {
             background-color: $navPage-subMenu-item--is-highlighted-background;
         }
+
     }
 
     &:hover, &.activePage {
         color: $navPage-subMenu-item--is-highlighted-color;
-
+        text-decoration:none;
+        &:after{
+            content: '';
+            height: 2px;
+            background: #fa0b0b;
+            display:block;
+            margin-top: 2px;
+        }
+        &.cart-hover:after, &.x:after {
+            background:none !important;
+            padding-bottom: 0px !important;
+        }
         // scss-lint:disable NestingDepth
         svg {
             fill: $navPage-subMenu-item--is-highlighted-color;
