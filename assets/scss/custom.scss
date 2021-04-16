@@ -1,4 +1,118 @@
 .new-certificates{
     background: url(../img/night-space.png) 50% 0 no-repeat fixed;
     position:static;
+    padding-left:10vw;
+    padding-right:10vw;
+    height:auto;
+    .cx{
+        position:relative;
+        width:25%;
+        padding:10px;
+        height:auto;
+        @media(max-width:1024px){
+            width:50%;
+        }
+        @media(max-width:571px){
+            width:100%;
+        }
+    }
+
+    .certificate-title-container{
+        padding-top:5vw;
+        padding-bottom:10px;
+        .certificate-title{
+            color:white;
+            font-family: "Tw Cen MT Condensed Extra Bold";
+            font-size:1.6rem;
+            @media(min-width:1120px){
+                font-size:2.4rem;
+            }
+        }
+    }
+    .certificate-description{
+        color:#c1c1c1;
+        font-family: "Tw Cen MT Condensed";
+        font-size:1.7rem;
+       @media(max-width:571px){
+            font-size:1.5rem;
+       }
+    }
+
 }
+.bed-savings-icon-description{
+    margin-bottom:2.5rem !important;
+}
+.bed-saving-main-container{
+    margin:5vw;
+    margin-left:10vw;
+    margin-right:10vw;
+    display:block;
+    position:relative;
+    height:100%;
+    .bed-savings-title-container{
+        width:100%;
+        margin-bottom:7%;
+        .bed-savings-title{
+            font-family: "Tw Cen MT Condensed Extra Bold";
+            color:#222222;
+            font-size:4rem;
+            line-height:50px;
+        }
+    }
+    .bed-savings-icon{
+        width:10%;
+        position:relative;
+        @media(max-width:801px){
+            margin-right:15px;
+            width:12%;
+        }
+        .img-icon-savings{
+            max-height: 100%;
+            max-width: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+    .bed-savings-description{
+        width:90%;
+
+        .bed-savings-description-title{
+            font-family: "Tw Cen MT Condensed";
+            font-size:3rem;
+            @media(max-width:801px){
+                font-size:2.5rem;
+            }
+        }
+        .bed-savings-description-text{
+            width:60%;
+            font-size:1.4rem;
+            @media(max-width:801px){
+                font-size:1.2rem;
+            }
+        }
+    }
+    .bed-savings-image-absolute{
+        height:100%;
+        width:40vw;
+        position:absolute;
+        right:0;
+        bottom:0;
+        z-index: -25;
+        @media(min-width:1260px){
+            width:25vw;
+        }
+        .img-bed-savings{
+            bottom:0;
+            left:0;
+            width:100vw;
+            height:100%;
+        }
+
+    }
+
+}
+

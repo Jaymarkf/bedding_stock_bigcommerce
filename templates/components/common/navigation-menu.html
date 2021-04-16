@@ -35,16 +35,16 @@
         {{/unless}}
 
             <li class="navPages-item navPages-item-page">
-                <div class="navUser-item--cart">
+
                     <a
                             style="letter-spacing: 3px"
                             data-dropdown="cart-preview-dropdown"
                             href="{{urls.cart}}">
 
-                        <span class="cart-hover navUser-item--cart navPages-action fa fa-shopping-cart animation-element wiggle duration-1500 infinite" style="line-height: 25px;">   {{lang 'cart.my_cart'}} <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity">0</span></span>
+                        <span class="cart-hover navUser-item--cart navPages-action fa fa-shopping-cart animation-element wiggle duration-1500 infinite" style="line-height: 30px;">   {{lang 'cart.my_cart'}} <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity">0</span></span>
                     </a>
                     <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
-                </div>
+
             </li>
 
     </ul>
