@@ -41,7 +41,7 @@ blog:
 <!--        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}-->
 <!--    {{/if}}-->
 <!--    {{{region name="home_below_new_products"}}}-->
-    <div class="row new-certificates text-center py-5">
+    <div class="row new-certificates text-center py-5 mr-0">
         <div class="cx">
                 <div class="certificate-container">
                     <div class="head-certificate">
@@ -103,6 +103,7 @@ blog:
             </div>
         </div>
     </div>
+
     <div class="bed-saving-main-container">
 
         <div class="bed-savings-title-container">
@@ -149,7 +150,7 @@ blog:
                 </div>
             </div>
         </div>
-        <div class="bed-savings-icon-description d-flex my-2">
+        <div class="bed-savings-icon-description d-flex my-2" style="margin-bottom:0 !important;" >
             <div class="bed-savings-icon">
                 <img src="{{cdn 'assets/img/label-icon.png'}}" class="img-icon-savings" width="60" alt="">
             </div>
@@ -167,6 +168,47 @@ blog:
             <img src="{{cdn 'assets/img/bed-savings.png'}}" class="img-bed-savings" alt="">
         </div>
     </div>
+
+    <div class="bedding-structure-container">
+        <div class="bedding-structure-image-container">
+            <img src="{{cdn 'assets/img/bedding_structure.png'}}" class="bedding-structure-img" alt="">
+        </div>
+        <div class="bedding-structure-title-and-description">
+                <div class="bedding-structure-title">
+                        <h3>What's In<br>A Luxe Mattress</h3>
+                </div>
+                <div class="bedding-structure-description">
+                        Luxurious sleep compressed in four layers of performance <br> foam enclosed in a OEKO-&reg;<br>Standard 100 certified knitting fabric outer cover.
+                </div>
+                <div class="bedding-structure-button">
+                   <div class="bedding-structure-button-label">
+                            SHOP MATTRESS
+                   </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="container-overview">
+        <div class="row"><div class="col"><div class="text-center"><div class="overview-top">MATTRESS</div></div></div></div>
+        <div class="row"><div class="col"><div class="text-center"><div class="overview">Overview</div></div></div></div>
+        
+        <div class="row">
+            <div class="col">
+                <img src="{{cdn 'assets/img/mattress-care.jpg.jpg'}}"  class="img-fluid" alt="">
+            </div>
+            <div class="col">
+                <img src="{{cdn 'assets/img/tell-tale.jpg.jpg'}}"  class="img-fluid" alt="">
+            </div>
+            <div class="col">
+                <img src="{{cdn 'assets/img/sleeping-naked.jpg.jpg'}}"  class="img-fluid" alt="">
+            </div>
+            <div class="col">
+                <img src="{{cdn 'assets/img/tips.jpg.jpg'}}"  class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+    
+    
 
 </div>
 {{/partial}}

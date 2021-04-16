@@ -44,11 +44,13 @@
 }
 .bed-saving-main-container{
     margin:5vw;
+    margin-bottom:0px !important;
     margin-left:10vw;
     margin-right:10vw;
     display:block;
     position:relative;
     height:100%;
+
     .bed-savings-title-container{
         width:100%;
         margin-bottom:7%;
@@ -79,19 +81,24 @@
     }
     .bed-savings-description{
         width:90%;
-
+        padding-bottom:15px;
         .bed-savings-description-title{
             font-family: "Tw Cen MT Condensed";
             font-size:3rem;
             @media(max-width:801px){
-                font-size:2.5rem;
+                font-size:1.9rem;
             }
         }
         .bed-savings-description-text{
+
             width:60%;
             font-size:1.4rem;
             @media(max-width:801px){
-                font-size:1.2rem;
+                font-size:1rem;
+            }
+            @media(max-width:748px){
+                line-height:17px;
+                width:70%;
             }
         }
     }
@@ -114,5 +121,135 @@
 
     }
 
+}
+.bedding-structure-container{
+    position:relative;
+    height:auto;
+    background-color: #0c1221;
+    .bedding-structure-image-container{
+        height:auto;
+        position:relative;
+        @media(max-width:912px){
+            overflow: hidden;
+            .bedding-structure-img{
+                width:50%;
+                max-width:150%;
+                min-width:150%;
+            }
+
+        }
+
+
+    }
+    .bedding-structure-title-and-description{
+        background-color: transparent;
+        position:absolute;
+        right:0px;
+        margin-right:15vw;
+        margin-left:5%;
+        top:11vw;
+        @media(max-width:1250px){
+            margin-right:15%;
+            margin-left:5%;
+
+
+        }
+        @media(max-width:912px){
+            position:relative;
+            display:block;
+            margin:0;
+            text-align:center;
+            top:0 !important;
+        }
+        .bedding-structure-title > *{
+            color:white;
+            font-family: "Tw Cen MT Condensed Extra Bold";
+            font-size:3vw;
+            margin:0;
+            @media(max-width:1250px){
+                font-size:1.8rem;
+            }
+        }
+
+        .bedding-structure-description{
+            font-family: "Tw Cen MT Condensed";
+            color: #e3e3e3;
+            font-size:1.8rem;
+            @media(max-width:1250px){
+                font-size:1.3rem;
+            }
+            @media(max-width:600px){
+                font-size:0.86rem;
+            }
+        }
+        .bedding-structure-button{
+            display:block;
+            position:relative;
+            margin-top:3rem;
+            @media(max-width:912px){
+                padding-bottom:30px;
+            }
+            .bedding-structure-button-label{
+                color:white;
+                background-color:#e92828;
+                padding:1rem;
+                letter-spacing: 2px;
+                text-align:center;
+                width:200px;
+                @media(max-width:912px){
+                margin:0 auto;
+                }
+                &:hover{
+                    cursor:pointer;
+                    background-color:#e96528;
+
+                }
+
+            }
+
+        }
+    }
+
+
+}
+.container-overview{
+    width: 100%;
+    padding-top:10vw;
+    .overview-top{
+        font-weight: bold;
+        color:gray;
+        letter-spacing: 2px;
+    }
+    .overview{
+        font-family:"Tw Cen MT Condensed Extra Bold";
+        font-size:4rem;
+        letter-spacing: 2px;
+        &::before{
+            content:'A.';
+            height:15px;
+            width:25px;
+            font-size:10px;
+            border-radius: 100%;
+            background-color: #00abc9;
+            color:#00abc9;
+            margin-right:25px;
+            position:relative;
+            top:-25px;
+
+        }
+        &::after{
+            content:'A.';
+            height:15px;
+            width:25px;
+            font-size:10px;
+            border-radius: 100%;
+            background-color: #00abc9;
+            color:#00abc9;
+            margin-left:25px;
+            position:relative;
+            top:-25px;
+
+        }
+    }
 }
 
