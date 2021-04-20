@@ -17,6 +17,7 @@ window.onscroll = function(){
 window.onload = function(){
     let height = (-document.documentElement.scrollTop) +row_top[0].offsetHeight;
     navpage_header[0].style.top = height + 'px';
+
 }
 window.onresize = function(){
     let height = (-document.documentElement.scrollTop) +row_top[0].offsetHeight;

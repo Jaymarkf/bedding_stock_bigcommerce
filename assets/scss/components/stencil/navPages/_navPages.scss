@@ -191,8 +191,22 @@
         }
     }
 }
-.cart-hover:hover{
-    background-color:#cc1b1b;
+#my_cart_header_container{
+    transition:0.2s;
+    #my_cart_header{
+        &:after{
+           display:none;
+        }
+    }
+    &:hover{
+        background-color:#e92828;
+        border:none;
+        color:white;
+        opacity:1;
+    }
+    &:after{
+        background:none !important;
+    }
 }
 .navPages-action {
     color: stencilColor("navPages-color");
