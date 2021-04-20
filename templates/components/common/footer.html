@@ -1,111 +1,217 @@
-{{#if banners.bottom}}
-    {{#if settings.data_tag_enabled}}
-        <div class="banners" data-banner-location="bottom">
-            {{#each (limit banners.bottom_metadata 1)}}
-                <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
-                    <div data-event-type="promotion-click">
-                        {{{this.content}}}
-                    </div>
+<!--{{#if banners.bottom}}-->
+<!--    {{#if settings.data_tag_enabled}}-->
+<!--        <div class="banners" data-banner-location="bottom">-->
+<!--            {{#each (limit banners.bottom_metadata 1)}}-->
+<!--                <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">-->
+<!--                    <div data-event-type="promotion-click">-->
+<!--                        {{{this.content}}}-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            {{/each}}-->
+<!--        </div>-->
+<!--    {{else}}-->
+<!--        <div class="banners" data-banner-location="bottom">-->
+<!--            <div class="banner">-->
+<!--                {{{limit banners.bottom 1}}}-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    {{/if}}-->
+
+<!--{{/if}}-->
+<!--<footer class="footer" role="contentinfo" style="background-color: #0c1221">-->
+<!--    <h2 class="footer-title-sr-only">{{lang 'footer.title'}}</h2>-->
+<!--    <div class="container">-->
+<!--        {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}-->
+<!--            <article class="footer-info-col-->
+<!--                footer-info-col&#45;&#45;social-->
+<!--                footer-info-col&#45;&#45;{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"-->
+<!--                data-section-type="footer-webPages">-->
+<!--                    <h3 class="footer-info-heading">{{lang 'social.connect'}}</h3>-->
+<!--                    {{> components/common/social-links}}-->
+<!--            </article>-->
+<!--        {{/if}}-->
+<!--        <section class="footer-info">-->
+<!--            <article class="footer-info-col footer-info-col&#45;&#45;small" data-section-type="footer-webPages">-->
+<!--                <h3 class="footer-info-heading">{{lang 'footer.navigate'}}</h3>-->
+<!--                <ul class="footer-info-list">-->
+<!--                    {{#each pages}}-->
+<!--                        <li>-->
+<!--                            <a href="{{url}}">{{name}}</a>-->
+<!--                        </li>-->
+<!--                    {{/each}}-->
+<!--                    <li>-->
+<!--                        <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </article>-->
+
+<!--            <article class="footer-info-col footer-info-col&#45;&#45;small" data-section-type="footer-categories">-->
+<!--                <h3 class="footer-info-heading">{{lang 'footer.categories'}}</h3>-->
+<!--                <ul class="footer-info-list">-->
+<!--                    {{#each categories}}-->
+<!--                        <li>-->
+<!--                            <a href="{{url}}">{{name}}</a>-->
+<!--                        </li>-->
+<!--                    {{/each}}-->
+<!--                </ul>-->
+<!--            </article>-->
+
+<!--            {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}-->
+<!--            <article class="footer-info-col footer-info-col&#45;&#45;small" data-section-type="footer-brands">-->
+<!--                <h3 class="footer-info-heading">{{lang 'footer.brands'}}</h3>-->
+<!--                <ul class="footer-info-list">-->
+<!--                    {{#each shop_by_brand}}-->
+<!--                        <li>-->
+<!--                            <a href="{{url}}">{{name}}</a>-->
+<!--                        </li>-->
+<!--                    {{/each}}-->
+<!--                    <li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>-->
+<!--                </ul>-->
+<!--            </article>-->
+<!--            {{/and}}-->
+
+<!--            {{#if settings.address}}-->
+<!--            <article class="footer-info-col footer-info-col&#45;&#45;small" data-section-type="storeInfo">-->
+<!--                <h3 class="footer-info-heading">{{lang 'footer.info'}}</h3>-->
+<!--                <address>{{nl2br settings.address}}</address>-->
+<!--                {{#if settings.phone_number}}-->
+<!--                    <strong>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>-->
+<!--                {{/if}}-->
+<!--            </article>-->
+<!--            {{/if}}-->
+
+<!--            <article class="footer-info-col" data-section-type="newsletterSubscription">-->
+<!--                {{#if settings.show_newsletter_box}}-->
+<!--                    {{> components/common/subscription-form}}-->
+<!--                {{/if}}-->
+<!--                {{> components/common/payment-icons}}-->
+<!--            </article>-->
+<!--        </section>-->
+<!--        {{#if theme_settings.geotrust_ssl_common_name}}-->
+<!--            <div class="footer-geotrust-ssl-seal">-->
+<!--                {{> components/common/geotrust-ssl-seal}}-->
+<!--            </div>-->
+<!--        {{/if}}-->
+<!--        {{#if settings.paypal_commerce_credit_message}}-->
+<!--        <div class="footer-copyright">-->
+<!--            <p class="paypal-credit">{{nl2br settings.paypal_commerce_credit_message}}</p>-->
+<!--        </div>-->
+<!--        {{/if}}-->
+<!--        {{#if theme_settings.show_powered_by}}-->
+<!--            <div class="footer-copyright">-->
+<!--                <p class="powered-by">{{lang 'footer.powered_by'}} <a href="https://www.bigcommerce.com?utm_source=merchant&amp;utm_medium=poweredbyBC" rel="nofollow">BigCommerce</a></p>-->
+<!--            </div>-->
+<!--        {{/if}}-->
+<!--        {{#if theme_settings.show_copyright_footer}}-->
+<!--            <div class="footer-copyright">-->
+<!--                <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>-->
+<!--            </div>-->
+<!--        {{/if}}-->
+<!--    </div>-->
+<!--</footer>-->
+
+<footer class="row">
+    <section class="col footer-content-container">
+        <div class="row">
+            <div class="col"><div class="footer-header">Bedding Stock</div></div>
+        </div>
+        <div class="row">
+            <div class="col links-container mt-5"><a href="#" class="links">About Us</a></div>
+        </div>
+        <div class="row">
+            <div class="col links-container"><a href="#" class="links">Product Certifications and Features</a></div>
+        </div>
+        <div class="row">
+            <div class="col footer-button-buy-mattress-container">
+                <div class="footer-button-buy-mattress">
+                    BUY MATTRESS
                 </div>
-            {{/each}}
-        </div>
-    {{else}}
-        <div class="banners" data-banner-location="bottom">
-            <div class="banner">
-                {{{limit banners.bottom 1}}}
             </div>
         </div>
-    {{/if}}
-
-{{/if}}
-<footer class="footer" role="contentinfo">
-    <h2 class="footer-title-sr-only">{{lang 'footer.title'}}</h2>
-    <div class="container">
-        {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
-            <article class="footer-info-col
-                footer-info-col--social
-                footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
-                data-section-type="footer-webPages">
-                    <h3 class="footer-info-heading">{{lang 'social.connect'}}</h3>
-                    {{> components/common/social-links}}
-            </article>
-        {{/if}}
-        <section class="footer-info">
-            <article class="footer-info-col footer-info-col--small" data-section-type="footer-webPages">
-                <h3 class="footer-info-heading">{{lang 'footer.navigate'}}</h3>
-                <ul class="footer-info-list">
-                    {{#each pages}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
-                    <li>
-                        <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
-                    </li>
-                </ul>
-            </article>
-
-            <article class="footer-info-col footer-info-col--small" data-section-type="footer-categories">
-                <h3 class="footer-info-heading">{{lang 'footer.categories'}}</h3>
-                <ul class="footer-info-list">
-                    {{#each categories}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
-                </ul>
-            </article>
-
-            {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
-            <article class="footer-info-col footer-info-col--small" data-section-type="footer-brands">
-                <h3 class="footer-info-heading">{{lang 'footer.brands'}}</h3>
-                <ul class="footer-info-list">
-                    {{#each shop_by_brand}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
-                    <li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
-                </ul>
-            </article>
-            {{/and}}
-
-            {{#if settings.address}}
-            <article class="footer-info-col footer-info-col--small" data-section-type="storeInfo">
-                <h3 class="footer-info-heading">{{lang 'footer.info'}}</h3>
-                <address>{{nl2br settings.address}}</address>
-                {{#if settings.phone_number}}
-                    <strong>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong>
-                {{/if}}
-            </article>
-            {{/if}}
-
-            <article class="footer-info-col" data-section-type="newsletterSubscription">
-                {{#if settings.show_newsletter_box}}
-                    {{> components/common/subscription-form}}
-                {{/if}}
-                {{> components/common/payment-icons}}
-            </article>
-        </section>
-        {{#if theme_settings.geotrust_ssl_common_name}}
-            <div class="footer-geotrust-ssl-seal">
-                {{> components/common/geotrust-ssl-seal}}
+    </section>
+    <section class="col footer-content-container support-container">
+            <div class="row">
+                <div class="col"><div class="footer-header">Support</div></div>
             </div>
-        {{/if}}
-        {{#if settings.paypal_commerce_credit_message}}
-        <div class="footer-copyright">
-            <p class="paypal-credit">{{nl2br settings.paypal_commerce_credit_message}}</p>
+        <div class="row">
+            <div class="col links-container mt-5"><a href="#" class="links">Blog</a></div>
         </div>
-        {{/if}}
-        {{#if theme_settings.show_powered_by}}
-            <div class="footer-copyright">
-                <p class="powered-by">{{lang 'footer.powered_by'}} <a href="https://www.bigcommerce.com?utm_source=merchant&amp;utm_medium=poweredbyBC" rel="nofollow">BigCommerce</a></p>
+        <div class="row">
+            <div class="col links-container"><a href="#" class="links">Set up & Care Instructions</a></div>
+        </div>
+        <div class="row">
+            <div class="col links-container"><a href="#" class="links">FAQs</a></div>
+        </div>
+        <div class="row">
+            <div class="col links-container"><a href="#" class="links">100-Night Sleep Trial</a></div>
+        </div>
+        <div class="row">
+            <div class="col links-container"><a href="#" class="links">Shipping Transit Chart</a></div>
+        </div>
+    </section>
+    <section class="col footer-content-container">
+        <div class="row">
+            <div class="col">
+                <div class="footer-header">Company</div>
             </div>
-        {{/if}}
-        {{#if theme_settings.show_copyright_footer}}
-            <div class="footer-copyright">
-                <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>
+        </div>
+        <div class="row">
+            <div class="col mt-5 contact-information-container">
+                <span class="contact-information">
+                    Phone:1(888) 732-7197<br>
+                    Email:support@beddingstock.com<br>
+                    Customer Service Hours:Mon-Fri:8am - 5pm
+
+                </span>
             </div>
-        {{/if}}
+        </div>
+        <div class="row">
+            <div class="col contact-icons-container">
+                <div class="contact-icons">
+                    <span class="rounded-circle">
+                        <i class="fa fa-facebook"></i>
+                    </span>
+                    <span class="rounded-circle">
+                        <i class="fa fa-twitter"></i>
+                    </span>
+                    <span class="rounded-circle">
+                        <i class="fa fa-google-plus "></i>
+                    </span>
+                    <span class="rounded-circle">
+                        <i class="fa fa-youtube"></i>
+                    </span>
+                    <span class="rounded-circle">
+                        <i class="fa fa-pinterest"></i>
+                    </span>
+                    <span class="rounded-circle">
+                        <i class="fa fa-linkedin"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</footer>
+<footer class="row powered-by d-flex">
+    <div class="very-footer-container">
+        <div class="text-left very-footer-content">
+            <div class="text-muted text-power-by">
+                Powered by BigCommerce<br>
+                &copy; 2019 BEDDINGSTOCK.COM ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </div>
+    <div class="very-footer-container">
+        <div class="stamped">
+                <img  src="{{cdn 'assets/img/stamped-footer.png'}}" class="mid-footer img-1-footer"  style="top:-5px;"alt="stamped"/>
+                <img  src="{{cdn 'assets/img/godaddy-footer.png'}}" class="mid-footer img-2-footer" alt="stamped"/>
+       </div>
+
+    </div>
+    <div class="very-footer-container">
+            <div class="payment-options text-right">
+                <img src="{{cdn 'assets/img/payment-options-footer.png'}}" class="img-fluid very-footer-img" alt="payment"/>
+            </div>
     </div>
 </footer>
+
