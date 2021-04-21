@@ -462,3 +462,182 @@ footer.powered-by{
     }
 
 }
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+//about us
+//banner1
+.banner-container{
+    position:relative;
+    .reviews-banner-badge-container{
+        position:absolute;
+        top:0;
+        right:0;
+        border: 1px solid green;
+        width:14%;
+        margin-right:20vw;
+        margin-top:10vw;
+    }
+}
+.newline{
+    display:block;
+    margin-top:10px;
+}
+.banner-title-container{
+    @media(max-width:550px){
+        br{
+            display:none !important;
+        }
+        position:relative;
+        display:block;
+        width:100%;
+        margin:0px;
+        padding:20px;
+        padding-left:50px;
+        padding-right:50px;
+        .small-title-heading{
+            font-size:9px !important;
+        }
+        .banner-main-title{
+            font-size:25px !important;
+            font-weight:900;
+        }
+        .banner-title-heading{
+            margin-top:10px !important;
+            font-size:20px !important;
+        }
+        .banner-title-description{
+            font-size:12px !important;
+        }
+
+    }
+    &h1{
+        margin:0 !important;
+    }
+    position:absolute;
+    top:0;
+    left:0;
+    width:38%;
+    margin-top:6vw;
+    margin-left:10vw;
+    font-family: 'Poppins';
+    .banner-title-heading{
+        position:relative;
+        width:100%;
+        .small-title-heading{
+            font-size:1vw;
+            color:#999999;
+            position:relative;
+            width:100%;
+        }
+        .banner-main-title{
+            color:#222222;
+            font-family: 'Poppins';
+            font-weight:900;
+            margin-top:0px !important;
+            margin-bottom:1.6vw;
+            font-size:2.6vw;
+            position:relative;
+            width:100%;
+            @media (max-width:1284px){
+                font-size:3vw;
+            }
+        }
+    }
+
+
+    .banner-title-body{
+        .banner-title-heading{
+            font-weight: 900;
+            font-size:2vw;
+            color:#53bcc1;
+            position:relative;
+            width:100%;
+            @media(max-width:967px){
+                font-size:2.5vw;
+            }
+        }
+        .banner-title-description{
+            color:#666666;
+            position:relative;
+            width:100%;
+            font-size:1.2vw;
+            @media (max-width:1046px){
+                font-size:1.31vw;
+            }
+        }
+    }
+
+    //reviews badge container absolute
+
+
+}
+//banner2
+.banner-container-2{
+    position:relative;
+    width:100%;
+    .banner-2-title-container{
+        position:absolute;
+        right:0;
+        top:0;
+        margin-top:7.7vw;
+        width:50%;
+        padding-right:6vw !important;
+        @media(max-width:550px){
+            br{
+                display:none;
+            }
+            position:relative;
+            display:block;
+            width:100%;
+            margin:0;
+            padding: 20px 50px;
+            .small-banner-2-heading{
+                color:#222222 !important;
+                font-size:2.6vw !important;
+
+            }
+            .banner-title-2-heading{
+                font-size:1.8rem !important;
+                margin-bottom:15px !important;
+            }
+            .banner-2-title-description{
+                color:#222222 !important;
+                font-size:0.9rem !important;
+            }
+
+        }
+        .small-banner-2-heading{
+            color:white;
+            font-size:17px;
+        }
+        .banner-title-2-heading{
+            color:#5fbfc5;
+            font-size:3.7rem;
+            font-family: 'Poppins';
+            font-weight:bolder;
+            margin-top:0px;
+            margin-bottom:50px;
+            transition:0.3s;
+            @media(max-width:1472px){
+                font-size:3.5vw;
+            }
+            @media(max-width:1035px){
+                margin-bottom:30px;
+            }
+        }
+        .banner-2-title-description{
+            color:white;
+            font-family: 'Poppins';
+            font-size:1.2rem;
+            @media(max-width:1248px){
+                font-size:1.6vw;
+            }
+        }
+
+    }
+
+
+}
+
+

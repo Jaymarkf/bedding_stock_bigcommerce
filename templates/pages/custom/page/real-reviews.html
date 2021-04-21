@@ -1,0 +1,931 @@
+---
+products:
+new:
+limit: {{theme_settings.homepage_new_products_count}}
+featured:
+limit: {{theme_settings.homepage_featured_products_count}}
+top_sellers:
+limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+recent_posts:
+limit: {{theme_settings.homepage_blog_posts_count}}
+---
+{{#partial "hero"}}
+{{{region name="home_below_menu"}}}
+{{#and carousel carousel.slides.length}}
+{{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
+{{/and}}
+{{{region name="home_below_carousel"}}}
+{{/partial}}
+
+{{#partial "page"}}
+
+{{#each shipping_messages}}
+{{> components/common/alert/alert-info message}}
+{{/each}}
+
+<div class="main full">
+    <style>
+        main.body{
+
+            margin-top:0 !important;
+        }
+        .navPages{
+            background:#3f3f3f !important;
+        }
+        .real-reviews-container{
+            position:relative;
+        }
+        #home_about_link:hover{
+            color:#6a82c0 !important;
+        }
+        footer.footer-info-links{
+            padding-top:80px !important;
+            background-color: #393939;
+        }
+        @media(max-width:550px){
+            #descblack{
+                color:black !important;
+            }
+        }
+
+    </style>
+   <div class="real-reviews-container">
+       <div class="row bg-light" style="padding-left:10vw;padding-right:10vw;">
+           <div class="col py-2">
+               <a id="home_about_link" href="/" class="text-muted font-weight-bold" style="text-decoration: none">HOME</a>
+               <span>/</span>
+               <span class="text-danger font-weight-bold" style="text-decoration: none">REAL REVIEWS</span>
+           </div>
+       </div>
+       <div class="row" style="position:relative;">
+           <div class="banner-container">
+               <img src="{{cdn 'assets/img/real-reviews-banner.png'}}" class="custom-banner" alt="">
+               <div class="banner-title-container">
+                   <div class="banner-title-heading">
+                       <h1 class="banner-main-title" style="color:#53bcc1 !important;margin-top:5vw !important;">Real Reviews</h1>
+                   </div>
+                   <div class="banner-title-body">
+                       <div class="banner-title-description" id="descblack" style="color:white">
+                           We appreciate honest feedback. Our more than 2,700<br>
+                           authentic and organic reviews speak for the quality we <br>
+                           provide to our customers.
+                       </div>
+                   </div>
+               </div>
+               <div class="reviews-banner-badge-container">
+                   <img src="{{cdn 'assets/img/reviews-badge.png'}}" style="width:100%;position:relative;" alt="">
+               </div>
+
+           </div>
+       </div>
+
+       <div class="review-box">
+           <div id="stamped-reviews-widget" data-widget-type="full-page" data-element-id="2" data-lang="en">
+               <style>
+
+                   div#stamped-reviews-widget[data-widget-type="full-page"], div#stamped-reviews-widget[data-widget-type="full-page-nps"] {
+                       max-width: 1200px;
+                       margin: auto !important;
+                       line-height: 23px;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] ul li:before {
+                       display: none;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] a {
+                       text-decoration: none;
+                       border: none;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-pagination-deco {
+                       display: none;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-widget-title {
+                       margin-bottom: 20px;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-widget-text {
+                       margin-left: 10px;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-reviews-author {
+                       color: grey;
+                       font-weight: normal;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"]:not([data-label-subtitle]) .stamped-widget-text:before {
+                       content: "Based on "
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"]:not([data-label-subtitle]) .stamped-widget-text:after {
+                       content: " Reviews"
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-verified-label {
+                       color: #1cc286;
+                       font-weight: normal;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-verified-label[data-verified-type="2"]:after {
+                       content: ' \e904  Verified Buyer';
+                       font-family: 'stamped-font', 'FontAwesome', 'Open Sans';
+                       word-spacing: -5px;
+                       font-weight: normal;
+                   }
+
+                   .stamped-fa-star, .stamped-fa-star-o, .stamped-fa-star-half-o {
+                       color: gold;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-reviews-title {
+                       font-weight: bold;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-reviews-title a:visited {
+                       color: #4e387e;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] a.stamped-review-product {
+                       font-size: 12px;
+                       font-weight: normal;
+                       color: #777;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-ratings-wrapper:nth-child(odd) {
+                       clear: both;
+                       display: inline-block;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-ratings-wrapper:nth-child(even) {
+                       margin-right: 0px !important;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-ratings-wrapper {
+                       width: 100% !important;
+                       margin-right: 4% !important;
+                       text-align: center !important;
+                       vertical-align: top !important;
+                       width: 48% !important;
+                       text-align: left !important;
+                       padding-top: 30px !important;
+                       margin-bottom: 35px !important;
+                       padding-bottom: 15px !important;
+                       float: left;
+                       border-top: 1px solid #f0f0f0;
+                       padding-top: 10px;
+                       font-size: 14px;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-reviews-message {
+                       font-weight: normal;
+                       margin: 10px 0px;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-reviews-message:before {
+                       content: '\201C  ';
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-reviews-message:after {
+                       content: ' \201D';
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-reviews-message:before,
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-reviews-message:after {
+                       font-family: cursive;
+                       font-size: 20px;
+                       line-height: 10px;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-reviews-image {
+                       height: 145px;
+                       width: 100px;
+                       float: left;
+                       margin-right: 20px;
+                       display: inline-block;
+                       vertical-align: top;
+                       text-align: center;
+                       position: relative;
+                       padding-left: 0 !important;
+                       margin-left: 0 !important;
+                       z-index: 0;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-reviews-message-image-block span[data-type] {
+                       width: auto;
+                       display: inline-block !important;
+                       position: relative;
+                       margin-left: 0 !important;
+                       margin-right: 10px !important;
+                       box-shadow: 0px 0px 4px #CCB;
+                       padding: 3px;
+                       border-radius: 5px;
+                       text-align: center;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-reviews-message-image-block a {
+                       height: 100px;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-reviews-message-image-block img {
+                       height: inherit !important;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] span[data-type='video'] a:before {
+                       content: '►';
+                       width: 100%;
+                       background: rgba(0, 0, 0, 0.3);
+                       color: white;
+                       font-size: 30px;
+                       position: absolute;
+                       height: 100%;
+                       vertical-align: middle;
+                       text-align: center;
+                       display: flex;
+                       align-items: center;
+                       justify-content: center;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-products-reviews-title {
+                       font-style: italic;
+                   }
+
+                   .stamped-products-reviews-title-variant:empty {
+                       display: none;
+                   }
+
+                   .stamped-products-reviews-title-variant:not(:empty):before {
+                       content: ' - ';
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-reviews-date {
+                       float: right;
+                       font-size: 12px;
+                       color: #999;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-pagination {
+                       font-size: 15px;
+                       text-align: center;
+                       clear: both;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] span.stamped-pagination-page {
+                       padding: 3px;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-pagination a {
+                       cursor: pointer;
+                       padding: 7px 12px;
+                       border: 1px solid #eee;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] #stamped-pagination-next {
+                       float: none;
+                       position: inherit;
+                       margin-left: 5px;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] #stamped-pagination-next a:before {
+                       content: '>';
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] #stamped-pagination-prev {
+                       float: none;
+                       position: inherit;
+                       margin-right: 5px;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] #stamped-pagination-prev a:before {
+                       content: '<';
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-pagination-page.is-active {
+                       color: #000;
+                       font-weight: bold;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-ratings-wrapper > div {
+                       position: relative;
+                       margin-left: 120px;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-reviews-date {
+                       margin-left: 0 !important;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-products-reviews-reply {
+                       background: none;
+                       padding: 15px;
+                       margin-top: 15px;
+                       border-top: 3px solid #eee;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-reviews-options ul {
+                       margin: 0px;
+                       padding: 0px;
+                       line-height: 15px;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"] .stamped-reviews-options ul li {
+                       list-style: disc;
+                       margin: 5px 30px;
+                       padding: 0px;
+                       font-size: 12px;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"][data-product-image="false"] .stamped-ratings-wrapper > div {
+                       padding: 0px !important;
+                       margin: 0px !important;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"][data-product-image="false"] .stamped-reviews-image {
+                       display: none;
+                   }
+
+                   #stamped-reviews-widget[data-widget-type="full-page"][data-show-avatar="False"] .stamped-ratings-wrapper > div {
+                       margin-left: 0px !important;
+                   }
+
+                   @media only screen and (max-width: 650px), only screen and (max-device-width: 650px) {
+                       #stamped-reviews-widget[data-widget-type="full-page"] .stamped-ratings-wrapper > div {
+                           text-align: left;
+                       }
+
+                       #stamped-reviews-widget[data-widget-type="full-page"] .stamped-ratings-wrapper {
+                           width: 100% !important;
+                           margin-right: 0 !important;
+                           margin-bottom: 20px !important;
+                           text-align: center !important;
+                       }
+                   }
+
+
+                   .stamped-widget-buttons {
+                       margin-bottom: 20px;
+                       display: none;
+                   }
+
+                   .btn-product-reviews, .btn-site-reviews {
+                       cursor: pointer;
+                   }
+
+                   .btn-product-reviews:before {
+                       content: 'Product Reviews';
+                   }
+
+                   .btn-site-reviews:before {
+                       content: 'Site Reviews';
+                   }
+
+                   .stamped-full-page-tabs ul {
+                       margin: 0px;
+                       padding: 0px;
+                       text-align: center;
+                       margin-top: 20px;
+                   }
+
+                   .stamped-full-page-tabs ul li.active {
+                       font-weight: bold;
+                       background: #fafafa;
+                       box-shadow: 0px 1px 2px #ccc;
+                   }
+
+                   .stamped-full-page-tabs ul li {
+                       display: inline-block;
+                       margin-right: 15px;
+                       font-size: 15px;
+                       border: 1px solid #777;
+                       padding: 10px 20px;
+                   }
+
+                   .stamped-full-page-tabs ul li a {
+                       color: black;
+                   }
+               </style>
+               <script>
+                   var StampedWidgetFullPageFn = (function (window, document) {
+                       var SECURE_ENDPOINT = 'https://stamped.io/api';
+                       var _widgetData, _obj, _stampedJQuery;
+
+                       function init(data, obj, stampedJQuery) {
+                           _stampedJQuery = stampedJQuery;
+                           var take = obj.data('take');
+                           var isShowImage = obj.data('product-image');
+                           var totalReviews = data.total;
+                           var totalReviewsAll = data.totalAll;
+                           var totalAllWithNPS = data.totalAllWithNPS;
+                           var totalRating = data.ratingAll;
+                           var totalRatingAll = data.ratingAll;
+                           var totalTake = 30;
+                           var page = obj.attr('data-page') || 1;
+                           var currentPage = page;
+                           var storeUrl = obj.attr('data-store-url');
+                           storeUrl = (storeUrl) ? '?storeUrl=' + storeUrl : '';
+                           var isTrim = obj.attr('data-trim-words') == 'True' || obj.attr('data-trim-words') == 'true' ? true : false;
+                           var isTotalWidget = obj.data('is-widget-total') == true ? true : false;
+                           var resolution = obj.data('resolution');
+                           var labelSubtitle = obj.data('label-subtitle') || '';
+                           var numTrimWords = obj.data('trim-characters');
+
+                           var labelVerifiedBuyer = obj.data('label-verified-buyer');
+                           var rounding = obj.data('rounding');
+
+                           if (isTotalWidget == true) {
+                               totalReviewsAll = data.total;
+                               totalRating = data.rating;
+                           }
+
+                           if (obj.attr('data-trim-words') == null) {
+                               isTrim = true;
+                           }
+
+                           var isLazyLoad = false;
+                           if (window.LazyLoadStamped && LazyLoadStamped.update && window.LazyLoadStampedDisabled != true) {
+                               isLazyLoad = true;
+                           }
+
+                           /* STYLING */
+                           var classNameWidget = '#stamped-reviews-widget[data-widget-type="full-page"]';
+                           var styleColorVerified = obj.data('style-color-verified');
+                           var styleColorText = obj.data('style-color-text');
+                           var styleColorLink = obj.data('style-color-link');
+                           var styleColorStar = obj.data('style-color-star');
+
+                           var style = '';
+
+                           if (styleColorVerified) {
+                               style += classNameWidget + ' ' + '.stamped-style-color-verified { color:' + styleColorVerified + ' !important; }';
+                           }
+                           if (styleColorText) {
+                               style += classNameWidget + ' ' + '.stamped-style-color-text { color:' + styleColorText + ' !important; }';
+                           }
+                           if (styleColorLink) {
+                               style += classNameWidget + ' ' + '.stamped-style-color-link { color:' + styleColorLink + ' !important; }';
+                           }
+                           if (styleColorStar) {
+                               style += classNameWidget + ' ' + '.stamped-style-color-star i { color:' + styleColorStar + ' !important; }';
+                           }
+
+                           if (totalAllWithNPS > totalReviewsAll) {
+                               style += classNameWidget + ' ' + '.stamped-widget-buttons { display: block !important; }';
+                           }
+
+                           if (style) {
+                               _stampedJQuery(obj).append('<style>' + style + '</style>');
+                           }
+                           /* ENDSTYLING */
+
+                           var shopName = data.shop;
+
+                           var data = data.data;
+
+                           _widgetData = data;
+                           _obj = obj;
+
+                           if (data.length) {
+                               if (take) {
+                                   totalTake = take;
+                               }
+                               var totalLength = data.length >= totalTake ? totalTake : data.length;
+                               var totalWidthPercentage = (100 - (totalLength * 2)) / totalLength;
+                               totalWidthPercentage = totalWidthPercentage > 33 ? 33 : totalWidthPercentage;
+                               var wrapper = _stampedJQuery('.stamped-reviews-wrapper', obj);
+
+                               var indexWithPhotos = 0;
+
+                               for (var i = 0; i < totalLength; i++) {
+                                   if (true) {
+                                       var stars = "";
+                                       var rating = parseInt(data[i].reviewRating);
+                                       while (rating >= 1) {
+                                           stars += '<i class="stamped-fa stamped-fa-star"></i>';
+                                           rating--;
+                                       }
+                                       var rating = parseInt(data[i].reviewRating);
+                                       if (rating > 0 && rating < 5) {
+                                           var balance = 5 - rating;
+                                           while (balance > 0) {
+                                               stars += '<i class="stamped-fa stamped-fa-star-o"></i>';
+                                               balance--;
+                                           }
+                                       }
+                                       var ratingWrapper = _stampedJQuery('<div class="stamped-ratings-wrapper stamped-review-card"></div>');
+                                       var rating = _stampedJQuery('<div class="stamped-reviews-rating stamped-style-color-star"> ' + stars + '</div>');
+                                       var message = _stampedJQuery('<div class="stamped-reviews-message stamped-style-color-text">').html(data[i].reviewMessage);
+
+                                       var optionsList = null;
+
+                                       if (data[i].reviewOptionsList && data[i].reviewOptionsList.length >= 1) {
+                                           var optionListHtml = "";
+                                           for (var ii = 0; ii < data[i].reviewOptionsList.length; ii++) {
+                                               var _title = data[i].reviewOptionsList[ii].message;
+                                               var _value = data[i].reviewOptionsList[ii].value;
+                                               var _slugTitle = slugify(_title);
+                                               var _slugValue = slugify(_value);
+
+                                               optionListHtml += '<li data-title="' + _slugTitle + '" data-value="' + _slugValue + '"><span class="stamped-reviews-option-title" data-title="' + _slugTitle + '">' + _title + '</span> <span class="stamped-reviews-option-value" data-value="' + _slugValue + '">' + _value + '</span></li>';
+                                           }
+
+                                           optionsList = _stampedJQuery('<div class="stamped-reviews-options"><ul>' + optionListHtml + '</ul></div>');
+                                       }
+
+                                       var labelVerified = '';
+                                       if (data[i].reviewVerifiedType == 2) {
+                                           labelVerified = ' <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="' + data[i].reviewVerifiedType + '"></span>'
+                                       }
+
+                                       var author = _stampedJQuery('<div class="stamped-reviews-author stamped-style-color-text">' + data[i].author + labelVerified + '</div>');
+
+                                       var location = _stampedJQuery('<div class="stamped-reviews-location" style="display:none;">' + data[i].location + '</div>');
+
+                                       var imageBlock = null;
+                                       if (data[i].reviewUserPhotos || data[i].reviewUserVideos) {
+                                           var imageTags = "";
+                                           var _idx = 0;
+                                           var _type = "photo";
+
+                                           if (data[i].reviewUserPhotos) {
+                                               for (var ii = 0; ii < data[i].reviewUserPhotos.split(',').length; ii++) {
+                                                   var _src = data[i].reviewUserPhotos.split(',')[ii];
+                                                   var _photoThumbSrc = 'https://s3-us-west-2.amazonaws.com/stamped.io/uploads/photos/thumb/' + _src;
+                                                   var _photoFullSrc = 'https://s3-us-west-2.amazonaws.com/stamped.io/uploads/photos/' + _src;
+
+                                                   if (resolution == "high") {
+                                                       _photoThumbSrc == _photoFullSrc;
+                                                   }
+
+                                                   imageTags += "<span data-type='photo'><a onclick='StampedWidgetFullPageFn.openModal(" + indexWithPhotos + ", " + _idx + ");' style='cursor:pointer;' data-type='photo'><img " + (isLazyLoad == true ? "data-" : "") + "src='" + _photoThumbSrc + "' class='stamped-lazyload' height='50' alt='Customer Photo' /></a></span>";
+                                                   _idx++;
+                                               }
+                                           }
+
+                                           if (data[i].reviewUserVideos) {
+                                               var _src = data[i].reviewUserVideos;
+                                               var _photoThumbSrc = '//cdn.stamped.io/uploads/videos/' + _src + '.jpg';
+
+                                               imageTags += "<span data-type='video'><a onclick='StampedWidgetFullPageFn.openModal(" + indexWithPhotos + ", " + _idx + ");' style='cursor:pointer;' data-type='video'><img " + (isLazyLoad == true ? "data-" : "") + "src='" + _photoThumbSrc + "' height='50' class='stamped-reviews-photo stamped-lazyload' onerror='this.style.display=\"none\"' alt='Customer Video' /></a></span>";
+                                               _idx++;
+
+                                               _type = "video";
+                                           }
+
+                                           indexWithPhotos++;
+
+                                           imageBlock = _stampedJQuery('<div class="stamped-reviews-message-image-block">' + imageTags + '</div>');
+                                       }
+
+                                       var title = _stampedJQuery('<div class="stamped-reviews-title"><a href="' + data[i].productUrl + storeUrl + '" class="stamped-review-title stamped-style-color-link" rel="nofollow">' + data[i].reviewTitle + '</a></div>');
+
+                                       var title2 = _stampedJQuery('<div class="stamped-products-reviews-title"><a href="' + data[i].productUrl + storeUrl + '" class="stamped-review-product style-color-link" rel="nofollow">' + data[i].productName + '</a><span class="stamped-products-reviews-title-variant">' + (data[i].productVariantName || '') + '</span></div>');
+
+                                       var reply = _stampedJQuery('<div class="stamped-products-reviews-reply"><strong>' + shopName + '</strong>:<div class="stamped-products-reviews-reply-message">"' + data[i].reviewReply + '"</div></div>');
+
+                                       if (data[i].productImageUrl) {
+                                           var _productImageUrl = data[i].productImageUrl;
+                                           if (resolution == "high") {
+                                               _productImageUrl = data[i].productImageLargeUrl;
+                                           }
+                                           var productImage = _stampedJQuery("<div class='stamped-reviews-image'><a href=" + data[i].productUrl + storeUrl + " rel=nofollow><img src='" + _productImageUrl + "' style='max-height: 100%; max-width: 100%; width: auto; height: auto; top: 0; bottom: 0; left: 0; right: 0; margin: auto;' onerror='this.style.display=\"none\"' alt='" + data[i].productName + " Product Image' /></a></div>");
+                                           ratingWrapper.append(productImage);
+                                       }
+                                       var date = _stampedJQuery('<div class="stamped-reviews-date"> ' + data[i].reviewDate + '</div>');
+                                       ratingWrapper.append(date);
+
+                                       ratingWrapper.append(rating);
+
+                                       if (data[i].reviewTitle) {
+                                           ratingWrapper.append(title);
+                                       }
+
+                                       ratingWrapper.append(optionsList);
+
+                                       ratingWrapper.append(message);
+
+                                       ratingWrapper.append(author);
+                                       ratingWrapper.append(location);
+
+                                       if (data[i].productName) {
+                                           ratingWrapper.append(title2);
+                                       }
+
+                                       if (imageBlock) {
+                                           ratingWrapper.append(imageBlock);
+                                       }
+
+                                       if (data[i].reviewReply) {
+                                           ratingWrapper.append(reply);
+                                       }
+
+                                       wrapper.append(ratingWrapper);
+                                   }
+                               }
+                               wrapper.append('<div style="clear:both;"></div>');
+
+                               var starHtml = "";
+
+                               var _valRounding = 1;
+                               if (rounding = "up") {
+                                   _valRounding = 0.5;
+                               }
+
+                               while (totalRating >= _valRounding) {
+                                   starHtml += '<i class="stamped-fa stamped-fa-star"></i>';
+                                   totalRating--;
+                               }
+
+                               while (totalRating > 0) {
+                                   if (totalRating >= 0.3 && totalRating < 1) {
+                                       starHtml += '<i class="stamped-fa stamped-fa-star-half-o"></i>';
+                                   } else {
+                                       starHtml += '<i class="stamped-fa stamped-fa-star-o"></i>';
+                                   }
+                                   totalRating--;
+                               }
+
+                               var ratingStars = _stampedJQuery('<span class="stamped-widget-stars stamped-style-color-star" data-rating="' + truncate(totalRatingAll, 1) + '">').html(starHtml);
+
+                               obj.append('<div class="stamped-widget-buttons"><div class="stamped-full-page-tabs"> <ul> <li class="active"> <a onclick="StampedWidgetFullPageFn.changeType(\'full-page\');" class="btn-product-reviews"></a> </li> <li class=""> <a onclick="StampedWidgetFullPageFn.changeType(\'full-page-nps\');" class="btn-site-reviews"></a> </li> </ul> </div></div>');
+
+
+                               var ratingTitle = _stampedJQuery('<span class="stamped-widget-text">').html(totalReviewsAll);
+                               var reviewTitleWrapper = _stampedJQuery('<div class="stamped-widget-title">');
+                               reviewTitleWrapper.append(ratingStars);
+                               reviewTitleWrapper.append(ratingTitle);
+                               obj.append(reviewTitleWrapper);
+
+                               obj.append(wrapper);
+
+                               // translate
+                               if (labelSubtitle) {
+                                   try {
+
+                                       var label = labelSubtitle.replace('{0}', totalReviewsAll);
+                                       _stampedJQuery('.stamped-widget-text', obj).html(label);
+                                   } catch (e) {}
+                               }
+
+                               if (labelVerifiedBuyer) {
+                                   obj.append("<style>#stamped-reviews-widget[data-widget-type='full-page'] .stamped-verified-label[data-verified-type='2']:after { content: ' \\f05d  " + labelVerifiedBuyer + "' !important; }</style>");
+                               }
+
+                               try {
+                                   StampedFn.triggerEvent('stamped:widget:full-page:loaded');
+                               } catch (ex) { }
+
+                               if (isLazyLoad) {
+                                   LazyLoadStamped.update();
+                               }
+
+                               if (isTrim) {
+                                   trim();
+                               }
+
+                               // pagination
+                               var totalPage = totalReviews > 0 ? (totalReviews / totalTake) < 1 ? 1 : Math.ceil(totalReviews / totalTake) : 1;
+                               if (totalPage == 1) {
+                                   return;
+                               }
+
+                               var paginationHtml = _stampedJQuery('<nav class="stamped-pagination"><div><span id="stamped-pagination-prev" class="stamped-pagination-prev"><a data-product-id="" data-page="' + (currentPage - 1) + '" tabindex="0"></a></span><span id="pages"></span><span id="stamped-pagination-next" class="stamped-pagination-next"><a data-product-id="" data-page="' + (Number(currentPage) + 1) + '" tabindex="0"></a></span></div></nav>');
+
+                               var divPagination = _stampedJQuery('.stamped-pagination', obj);
+                               if (divPagination.length) {
+                                   divPagination.replaceWith(paginationHtml);
+                               } else {
+                                   obj.append(paginationHtml);
+                               }
+                               divPagination = _stampedJQuery('.stamped-pagination', obj);
+
+                               var total = totalPage;
+                               var pages = [];
+                               currentPage = Number(currentPage);
+                               total = Number(total);
+
+                               pages.push(1);
+                               if (total <= 7) {
+                                   for (i = 2; i < total; i++) {
+                                       pages.push(i);
+                                   }
+                                   if (total == currentPage) {
+                                       pages.push(currentPage);
+                                   }
+                               }
+                               if (total >= 8) {
+                                   var totalPrevPage = currentPage - 2;
+                                   if (totalPrevPage >= 1) {
+                                       if ((currentPage - 2) != 1)
+                                           pages.push(currentPage - 2);
+
+                                       pages.push(currentPage - 1);
+                                   }
+
+                                   if (currentPage != 1) {
+                                       pages.push(currentPage);
+                                   }
+
+                                   var totalNextPage = currentPage + 2;
+
+                                   if (totalNextPage <= total) {
+                                       pages.push(currentPage + 1);
+                                       if (totalNextPage != total) {
+                                           pages.push(currentPage + 2);
+                                       }
+                                   }
+                               }
+                               if (currentPage == 1 || currentPage == 1) {
+                                   _stampedJQuery('#stamped-pagination-prev', divPagination).hide();
+                               } else {
+                                   _stampedJQuery('#stamped-pagination-prev', divPagination).show();
+                               }
+                               if (total == currentPage || total == 1) {
+                                   _stampedJQuery('#stamped-pagination-next', divPagination).hide();
+                               } else {
+                                   _stampedJQuery('#stamped-pagination-next', divPagination).show();
+                               }
+                               if (total != currentPage)
+                                   pages.push(total);
+
+                               for (var i = 0; i < pages.length; i++) {
+                                   var isCurrentPage = pages[i] == currentPage;
+                                   if (isCurrentPage) {
+                                       _stampedJQuery('#pages', divPagination).append((' <span class="stamped-pagination-page is-active"><a data-product-id="" data-page="' + pages[i] + '" tabindex="0">' + pages[i] + '</a></span> '));                    } else {
+                                       _stampedJQuery('#pages', divPagination).append((' <span class="stamped-pagination-page"><a data-product-id="" data-page="' + pages[i] + '" tabindex="0">' + pages[i] + '</a></span> '));
+                                   }
+                                   if (pages[i] == 1) {
+                                       if (total > 7 && currentPage >= 5) {
+                                           _stampedJQuery('#pages', divPagination).append((' <span class="stamped-pagination-deco">&hellip;</span>'));
+                                       }
+                                   }
+                                   if (i == (pages.length - 2) && (currentPage + 2) < total) {
+                                       _stampedJQuery('#pages', divPagination).append((' <span class="stamped-pagination-deco">&hellip;</span>'));
+                                   }
+                               }
+
+                               var isInit = _stampedJQuery(obj).attr('data-init');
+
+                               if (isInit != 'true') {
+                                   _stampedJQuery(document).on('click keypress', '[data-widget-type="full-page"] .stamped-pagination a', function (event) {
+                                       if (checkAccessibilityClick(event) === true) {
+                                           pageWidget(this);
+                                       }
+
+                                       _stampedJQuery(obj).attr('data-init', 'true');
+                                   });
+                               }
+                           }
+
+                           function pageWidget(ele) {
+                               StampedFn.pageWidget(ele);
+
+                               if (!!page && obj.attr('data-page')) {
+                                   jump(obj);
+                               }
+                           }
+
+                           function repeat(s, n) {
+                               var a = [],
+                                   i = 0;
+                               for (; i < n;) a[i++] = s;
+                               return a.join('');
+                           }
+
+                           var _isAnimating = false;
+
+                           function jump(obj) {
+                               if (_isAnimating == true) { return; }
+                               _isAnimating = true;
+
+                               if (obj) {
+                                   var animation = obj.attr('data-animation');
+
+                                   if (animation == 'false') { } else {
+                                       var scrollContainer = _stampedJQuery('html, body');
+                                       var curElem = obj;
+
+                                       var page = jQueryStamped("html, body");
+
+                                       page.on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function () {
+                                           page.stop();
+                                           _isAnimating = false;
+                                       });
+
+                                       page.animate({ scrollTop: curElem.offset().top }, (animation || 1000), function () {
+                                           page.off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
+                                           _isAnimating = false;
+                                       });
+                                   }
+                               }
+                           }
+
+                           function trim() {
+                               var _num = 180;
+                               if (numTrimWords) {
+                                   _num = numTrimWords;
+                               }
+                               _stampedJQuery('.stamped-reviews-message', obj).each(function (i) {
+                                   var txtOriginal = _stampedJQuery(this).text().trim();
+
+                                   var txtTrimmed = txtOriginal.substring(0, _num)
+                                       .split(" ") // separate characters into an array of words
+                                       .slice(0, -1) // remove the last full or partial word
+                                       .join(" ") + "..."; // combine into a single string and append "..."
+
+                                   if (txtOriginal.length > _num && txtTrimmed.length > 20) {
+                                       _stampedJQuery(this).text(txtTrimmed);
+                                       _stampedJQuery(this).append('<a class="read-more" style="margin-left:10px; cursor:pointer;">read more</span>').on('click', '.read-more', function () {
+                                           // remove link
+                                           // replace text
+                                           _stampedJQuery(this).closest('.stamped-reviews-message').find('.read-more').hide();
+                                           var txtOriginal = _stampedJQuery(this).closest('.stamped-reviews-message').find('.original-review').text();
+                                           _stampedJQuery(this).closest('.stamped-reviews-message').text(txtOriginal);
+                                       });;
+                                       _stampedJQuery(this).append('<span class="original-review" style="display:none !important;">' + txtOriginal + '</span>');
+                                   }
+                               });
+
+                               _stampedJQuery(document)
+                           }
+
+                           function truncate(num, places) {
+                               return Math.trunc(num * Math.pow(10, places)) / Math.pow(10, places);
+                           }
+                       }
+
+                       function openModal(index, idxPhoto) {
+                           StampedFn.openUGCModal(_widgetData, index, _obj, 1, true, idxPhoto);
+                       }
+
+                       function changeType(type) {
+                           _stampedJQuery(_obj).attr('data-widget-type', type);
+                           _stampedJQuery(_obj).attr('data-page', '1');
+                           var minRatingNPS = _stampedJQuery(_obj).attr('data-min-rating-nps');
+                           var minRatingReviews = _stampedJQuery(_obj).attr('data-min-rating-reviews');
+
+                           if (type == 'full-page-nps') {
+                               _stampedJQuery(_obj).attr('data-min-rating', (minRatingNPS || '9'));
+                           } else {
+                               _stampedJQuery(_obj).attr('data-min-rating', (minRatingReviews || ''));
+                           }
+                           _stampedJQuery('.stamped-reviews-wrapper', _obj).hide();
+                           _stampedJQuery('.stamped-widget-title', _obj).hide();
+                           _stampedJQuery('.stamped-pagination', _obj).hide();
+                           StampedFn.pageWidget(_obj);
+                       }
+
+                       function checkAccessibilityClick(event) {
+                           if (event.type === 'click') {
+                               return true;
+                           }
+                           else if (event.type === 'keypress') {
+                               var code = event.charCode || event.keyCode;
+                               if ((code === 32) || (code === 13)) {
+                                   return true;
+                               }
+                           }
+                           else {
+                               return false;
+                           }
+                       }
+
+                       function slugify(text) {
+                           return text.toString().toLowerCase().trim()
+                               .replace(/\s+/g, '-')           // Replace spaces with -
+                               .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+                               .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+                               .replace(/^-+/, '')             // Trim - from start of text
+                               .replace(/-+$/, '');            // Trim - from end of text
+                       }
+
+                       return {
+                           init: init,
+                           openModal: openModal,
+                           changeType: changeType
+                       }
+                   }(window, document));</script><div class="stamped-widget-buttons"><div class="stamped-full-page-tabs"> <ul> <li class="active"> <a onclick="StampedWidgetFullPageFn.changeType('full-page');" class="btn-product-reviews"></a> </li> <li class=""> <a onclick="StampedWidgetFullPageFn.changeType('full-page-nps');" class="btn-site-reviews"></a> </li> </ul> </div></div><div class="stamped-widget-title"><span class="stamped-widget-stars stamped-style-color-star" data-rating="4.8"><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></span><span class="stamped-widget-text">2258</span></div><div class="stamped-reviews-wrapper"><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 01/10/2020</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTUyMg2" class="stamped-review-title stamped-style-color-link" rel="nofollow">12" memory foam mattress</a></div><div class="stamped-reviews-message stamped-style-color-text">I've been sleeping on mem. foam, since it first became avail.
+               this mattress allows me to sleep on my side, and stay down for 8-9 hrs.
+               light, and decompressed right out of the box.</div><div class="stamped-reviews-author stamped-style-color-text">Anonymous <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 11/17/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTUxOQ2" class="stamped-review-title stamped-style-color-link" rel="nofollow">soft on top firm on bottom.</a></div><div class="stamped-reviews-message stamped-style-color-text">I got this mattress for my truck. It is soft on the top and firm on the bottom. I get a good nights sleep on it without falling through to smother myself.</div><div class="stamped-reviews-author stamped-style-color-text">Anonymous <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 11/14/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTUyMA2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Too early to tell</a></div><div class="stamped-reviews-message stamped-style-color-text">It seems OK so far, but does seem to have a slight ''hamock'' effect and when moving to the right or left the mattress seems to then have a "****'' there. but I'm not used to a...<a class="read-more" style="margin-left:10px; cursor:pointer;">read more</a><span class="original-review" style="display:none !important;">It seems OK so far, but does seem to have a slight ''hamock'' effect and when moving to the right or left the mattress seems to then have a "****'' there. but I'm not used to a foam mattress and maybe the return position of the foam my be slower than I expected. I need more time to try it out. Thanks for you interest.</span></div><div class="stamped-reviews-author stamped-style-color-text">Anonymous <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 11/14/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTUyMQ2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Best Sleep in a long time!</a></div><div class="stamped-reviews-message stamped-style-color-text">Mattress gave immediate relief to my nagging back problem. Allows me to get 6-8 hours of sleep a night. Excellent product.</div><div class="stamped-reviews-author stamped-style-color-text">Anonymous <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 10/27/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTUxNg2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Like sleeping on a thick cloud!!!</a></div><div class="stamped-reviews-message stamped-style-color-text">The extra inches of the mattress are well worth the money. It really makes a difference.
+               If you buy one of these please note that it took a full 6 days for the mattress to expand....<a class="read-more" style="margin-left:10px; cursor:pointer;">read more</a><span class="original-review" style="display:none !important;">The extra inches of the mattress are well worth the money. It really makes a difference.
+If you buy one of these please note that it took a full 6 days for the mattress to expand. During that time the mattress was a little too soft but now that it has fully expanded it is perfect.</span></div><div class="stamped-reviews-author stamped-style-color-text">Anonymous <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 10/20/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTUxNA2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Twin memory foam mattress</a></div><div class="stamped-reviews-message stamped-style-color-text">Bought to put in travel trailer for our top bunk,very comfortable.</div><div class="stamped-reviews-author stamped-style-color-text">Anonymous <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 10/19/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTUxMw2" class="stamped-review-title stamped-style-color-link" rel="nofollow">A+ Mattress</a></div><div class="stamped-reviews-message stamped-style-color-text">This was perfect for me because it wasn’t too hard and wasn’t too soft.</div><div class="stamped-reviews-author stamped-style-color-text">LORRIE M. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 10/18/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTUxMQ2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Very happy</a></div><div class="stamped-reviews-message stamped-style-color-text">Purchased this less expensive mattress for our camper, but found it to be as comfortable as the one at home that cost hundreds more.</div><div class="stamped-reviews-author stamped-style-color-text">Anonymous <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 09/26/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTUxMA2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Absolutely love it. Best sleep</a></div><div class="stamped-reviews-message stamped-style-color-text">Absolutely love it. Best sleep we have had in a long time.</div><div class="stamped-reviews-author stamped-style-color-text">Anonymous <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 09/23/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTUwOA2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Great mattress!!</a></div><div class="stamped-reviews-message stamped-style-color-text">This mattress arrived quickly. It was packed well. It’s perfect for my guest bedroom. My recent guests said it was pretty comfortable...</div><div class="stamped-reviews-author stamped-style-color-text">Anonymous <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 09/21/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTUwOQ2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Awesome Mattress !!!!!!!</a></div><div class="stamped-reviews-message stamped-style-color-text">Feels so good to sleep on. I am so glad I choose this mattress.
+               Very happy with my purchase.</div><div class="stamped-reviews-author stamped-style-color-text">Lynda C. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 09/08/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTUwNA2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Best Purchase I’ve made in years!</a></div><div class="stamped-reviews-message stamped-style-color-text">Pros: easy to unpack and install
+               Cons: waiting 72 hours for full expansion
+               Worth the wait! I slept through the night for the first times in 2 years.</div><div class="stamped-reviews-author stamped-style-color-text">NEIL B. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 08/22/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTUwMw2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Best mattress for a comfortable nights rest</a></div><div class="stamped-reviews-message stamped-style-color-text">I purchased a Med-firm in the past and while it was nice I tried a medium this time and it is the most comfortable for a side sleeper !</div><div class="stamped-reviews-author stamped-style-color-text">David R. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 07/18/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTUwMQ2" class="stamped-review-title stamped-style-color-link" rel="nofollow">12" lux gel memory foam mattress</a></div><div class="stamped-reviews-message stamped-style-color-text">The mattress is very comfortable but it is also very hot.. I wake up every
+               night two or three hours later because the place where I am sleeping is so hot. I have to move to...<a class="read-more" style="margin-left:10px; cursor:pointer;">read more</a><span class="original-review" style="display:none !important;">The mattress is very comfortable but it is also very hot.. I wake up every
+night two or three hours later because the place where I am sleeping is so hot. I have to move to another place on the mattress in order to go back to sleep.</span></div><div class="stamped-reviews-author stamped-style-color-text">robert s. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 07/17/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTQ5OA2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Best sleep</a></div><div class="stamped-reviews-message stamped-style-color-text">I love love love love love this mattress. One of the best sleep I have ever had. It did have a lil smell but my sheet masked it, and it fades as the days go by.
+               Very comfortable....<a class="read-more" style="margin-left:10px; cursor:pointer;">read more</a><span class="original-review" style="display:none !important;">I love love love love love this mattress. One of the best sleep I have ever had. It did have a lil smell but my sheet masked it, and it fades as the days go by.
+Very comfortable. My husband would get off the bed and I wouldn’t feel a thing and I am a very light sleeper.
+I plan to purchase the twin for my son. I have recommended it to a few friends.</span></div><div class="stamped-reviews-author stamped-style-color-text">Anonymous <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 07/05/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTQ5Nw2" class="stamped-review-title stamped-style-color-link" rel="nofollow">1st time mail order mattress</a></div><div class="stamped-reviews-message stamped-style-color-text">We have only had this for 3 days but.......it seems to be as good as they say!! So far has been a great buy!! Both in comfort and on the budget!!</div><div class="stamped-reviews-author stamped-style-color-text">Richard N. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 07/01/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTQ5Ng2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Excellent firm comfortable mattress</a></div><div class="stamped-reviews-message stamped-style-color-text">I only have positive comments. I purchased this mattress because my husband and I desperately needed a firm mattress. I just had hip replacement surgery and our old mattress...<a class="read-more" style="margin-left:10px; cursor:pointer;">read more</a><span class="original-review" style="display:none !important;">I only have positive comments. I purchased this mattress because my husband and I desperately needed a firm mattress. I just had hip replacement surgery and our old mattress didn’t have enough support for me to be able to use it. Two of my sisters purchased this mattress for themselves and raved about how comfortable it was. I decided to take a chance because it was only $500 for a king. It arrived in four days and was easy to set up. It immediately expanded. There was a slight smell, but a little room spray took care of that.
+Both my husband and I love it! Firm and supper comfortable. I am able to sleep through the night now. We are so happy!</span></div><div class="stamped-reviews-author stamped-style-color-text">Anonymous <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 06/09/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTQ5NA2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Great matress for the $</a></div><div class="stamped-reviews-message stamped-style-color-text">Pros, the cost, the delivery time, comfort
+               Cons, when you sit on the edge it does not hold it's firmness</div><div class="stamped-reviews-author stamped-style-color-text">Terry R. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 05/26/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTQ5Mg2" class="stamped-review-title stamped-style-color-link" rel="nofollow">serior</a></div><div class="stamped-reviews-message stamped-style-color-text">only used it a week but am impressed with the mattress as it sures helps to get a good night sleep</div><div class="stamped-reviews-author stamped-style-color-text">Anonymous <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 05/24/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTQ5MA2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Love it</a></div><div class="stamped-reviews-message stamped-style-color-text">Oh my it is fabulous firm and soft we love it!</div><div class="stamped-reviews-author stamped-style-color-text">Tina A. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 04/25/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTQ4NA2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Sleep like a baby</a></div><div class="stamped-reviews-message stamped-style-color-text">I bought this mattress for my sons bed I end up the being the one who sleeps on it most of the time it’s so comfortable more comfortable My fancy very expensive Tempur-pedic in...<a class="read-more" style="margin-left:10px; cursor:pointer;">read more</a><span class="original-review" style="display:none !important;">I bought this mattress for my sons bed I end up the being the one who sleeps on it most of the time it’s so comfortable more comfortable My fancy very expensive Tempur-pedic in one word I love it my son loved it and I wish I knew about it before I would not have spent thousands on my other two mattresses for my California king</span></div><div class="stamped-reviews-author stamped-style-color-text">Ahlem B. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 04/11/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTQ4Nw2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Br</a></div><div class="stamped-reviews-message stamped-style-color-text">Very good firm mattress</div><div class="stamped-reviews-author stamped-style-color-text">ROBERT R. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 04/08/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTQ4Ng2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Excellent Value!</a></div><div class="stamped-reviews-message stamped-style-color-text">Mattress measurements are honest. The unit is right in between firm and plush. Feels very comfortable. Customer service is excellent too.</div><div class="stamped-reviews-author stamped-style-color-text">Nicholas D. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 04/07/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MTQ4NQ2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Gel mattress</a></div><div class="stamped-reviews-message stamped-style-color-text">My son absolutely loves it</div><div class="stamped-reviews-author stamped-style-color-text">Bryan S. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 03/28/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2MzAwMw2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Mrs. Robin</a></div><div class="stamped-reviews-message stamped-style-color-text">We like it very much, I have RA and needed a firm mattress but a little soft on the top so the gel is perfect I give it an A#</div><div class="stamped-reviews-author stamped-style-color-text">Robin C. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 02/16/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2Mjk4OA2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Money well spent</a></div><div class="stamped-reviews-message stamped-style-color-text">I rest well and get a great nights sleep on his mattress. It contours to your body and has good support. I would
+               definitely recommend this product. It was also at a great...<a class="read-more" style="margin-left:10px; cursor:pointer;">read more</a><span class="original-review" style="display:none !important;">I rest well and get a great nights sleep on his mattress. It contours to your body and has good support. I would
+definitely recommend this product. It was also at a great price.
+Ervin Roberts</span></div><div class="stamped-reviews-author stamped-style-color-text">Ervin R. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 02/15/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2Mjk5NQ2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Awesome!</a></div><div class="stamped-reviews-message stamped-style-color-text">Originally bought this mattress for my guest room. My husband ended up trading it out with the mattress in our room. Great mattress, even made my back feel better with my...<a class="read-more" style="margin-left:10px; cursor:pointer;">read more</a><span class="original-review" style="display:none !important;">Originally bought this mattress for my guest room. My husband ended up trading it out with the mattress in our room. Great mattress, even made my back feel better with my c-section recovery.</span></div><div class="stamped-reviews-author stamped-style-color-text">Angelique S. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 02/02/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2Mjk5MA2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Awesome Value and Comfort</a></div><div class="stamped-reviews-message stamped-style-color-text">They are great! They are more comfortable than we thought and a great price. Thank you.</div><div class="stamped-reviews-author stamped-style-color-text">Dora S. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 02/02/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2Mjk4OQ2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Very comfortable mattresses!!!</a></div><div class="stamped-reviews-message stamped-style-color-text">It is great! They are more comfortable than we thought. Thank you.</div><div class="stamped-reviews-author stamped-style-color-text">Dora S. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div class="stamped-ratings-wrapper stamped-review-card"><div class="stamped-reviews-date"> 02/02/2019</div><div class="stamped-reviews-rating stamped-style-color-star"> <i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i><i class="stamped-fa stamped-fa-star"></i></div><div class="stamped-reviews-title"><a href="https://stamped.io/go/d3xXaWRnZXRGdWxsUGFnZXwxMDU4MjN8cnwyMjI2Mjk5Mg2" class="stamped-review-title stamped-style-color-link" rel="nofollow">Awesome bed</a></div><div class="stamped-reviews-message stamped-style-color-text">I think this is a great bed, easy to put up, way comfortable, and price is right! Its all good, nothing bad to say, go buy one!</div><div class="stamped-reviews-author stamped-style-color-text">David B. <span class="stamped-verified-label stamped-style-color-verified" data-verified-type="2"></span></div><div class="stamped-reviews-location" style="display:none;"></div></div><div style="clear:both;"></div></div><nav class="stamped-pagination"><div><span id="stamped-pagination-prev" class="stamped-pagination-prev" style="display: none;"><a data-product-id="" data-page="0" tabindex="0"></a></span><span id="pages"> <span class="stamped-pagination-page is-active"><a data-product-id="" data-page="1" tabindex="0">1</a></span>  <span class="stamped-pagination-page"><a data-product-id="" data-page="2" tabindex="0">2</a></span>  <span class="stamped-pagination-page"><a data-product-id="" data-page="3" tabindex="0">3</a></span>  <span class="stamped-pagination-deco">…</span> <span class="stamped-pagination-page"><a data-product-id="" data-page="67" tabindex="0">67</a></span> </span><span id="stamped-pagination-next" class="stamped-pagination-next"><a data-product-id="" data-page="2" tabindex="0"></a></span></div></nav></div>
+
+       </div>
+   </div>
+</div>
+{{/partial}}
+{{> layout/base}}

@@ -23,9 +23,15 @@
             window.lazySizesConfig = window.lazySizesConfig || {};
             window.lazySizesConfig.loadMode = 1;
         </script>
+        <script
+                src="https://code.jquery.com/jquery-3.6.0.js"
+                integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+                crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="{{cdn 'assets/otslider.css'}}"/>
         <script async src="{{cdn 'assets/dist/theme-bundle.head_async.js'}}"></script>
         <script async src="{{cdn 'assets/js/custom-js.js'}}"></script>
-
+        <script async src="{{cdn 'assets/js/otslider.js'}}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -64,6 +70,7 @@
         {{~inject 'carouselContentAnnounceMessage' (lang 'carousel.content_announce_message')}}
     </head>
     <body>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
 
@@ -81,3 +88,13 @@
         {{{footer.scripts}}}
     </body>
 </html>
+<script>
+  if(window.location.pathname == '/about-us/'){
+      var otslider = new OTSlider();
+      otslider.init({
+          duration: 3000,
+          autoPlay : true,
+          pauseOnHover : true
+      });
+  }
+</script>

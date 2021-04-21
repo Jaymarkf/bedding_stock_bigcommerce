@@ -3,7 +3,8 @@
     "brand": {},
     "category": {},
     "page": {
-      "about-us.html": "/about-us/"
+      "about-us.html": "/about-us/",
+      "real-reviews.html": "/real-reviews/"
     },
     "product": {}
   },
