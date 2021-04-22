@@ -4,7 +4,9 @@
     "category": {},
     "page": {
       "about-us.html": "/about-us/",
-      "real-reviews.html": "/real-reviews/"
+      "real-reviews.html": "/real-reviews/",
+      "the-truth.html" : "/the-truth/"
+
     },
     "product": {}
   },
