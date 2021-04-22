@@ -469,11 +469,11 @@ footer.powered-by{
 //banner1
 .banner-container{
     position:relative;
+    min-width:100%;
     .reviews-banner-badge-container{
         position:absolute;
         top:0;
         right:0;
-        border: 1px solid green;
         width:14%;
         margin-right:20vw;
         margin-top:10vw;
@@ -640,4 +640,47 @@ footer.powered-by{
 
 }
 
+.reviews-bed-container{
+    background-color:#53bcc1;
+    display:flex;
+    position:relative;
+    width:100%;
+    justify-content: center;
+    @media(max-width:453px){
+        display:block;
+        text-align:center;
+        padding-left:20px;
+        padding-right:20px;
+
+    }
+
+    .review-max-ratings{
+        .star-max-ratings{
+            color:white;
+            font-size:1.4vw;
+            margin-bottom:1vw;
+            @media(max-width:453px){
+                font-size:0.8rem;
+            }
+        }
+        .title-ratings{
+            font-family: 'Poppins';
+            font-size:2vw;
+            font-weight:900;
+            margin-bottom:1vw;
+            @media(max-width:453px){
+                font-size:1.6rem;
+            }
+        }
+        .description-ratings{
+            color:white;
+            @media(max-width:453px){
+                font-size:1rem;
+            }
+        }
+    }
+}
+.v-align-middle{
+    vertical-align: middle;
+}
 
