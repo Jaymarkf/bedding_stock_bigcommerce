@@ -2,6 +2,7 @@ const navpage_header = document.getElementsByClassName('navPages');
 const row_top = document.getElementsByClassName('row-top');
 const about_container = document.getElementsByClassName('about-us-container');
 const real_reviews = document.getElementsByClassName('real-reviews-container');
+const global_container = document.getElementsByClassName('global-container');
 window.onscroll = function(){
 
 
@@ -21,6 +22,11 @@ window.onload = function(){
     var path = window.location.pathname;
     if(path == '/about-us/'){
        about_container[0].style.top = navpage_header[0].offsetHeight + 'px';
+    }else if(path == '/real-reviews/'){
+        real_reviews[0].style.top = navpage_header[0].offsetHeight + 'px';
+    }else if(path == '/the-truth/'){
+        global_container[0].style.top = navpage_header[0].offsetHeight + 'px';
+        global_container[0].style.position = 'relative';
     }
 
 
@@ -34,7 +40,11 @@ window.onresize = function(){
         about_container[0].style.top = navpage_header[0].offsetHeight + 'px';
     }else if(path == '/real-reviews/'){
         real_reviews[0].style.top = navpage_header[0].offsetHeight + 'px';
+    }else if(path == '/the-truth/'){
+        global_container[0].style.top = navpage_header[0].offsetHeight + 'px';
+        console.log('aa');
     }
+
 }
 // const heading_title = document.getElementsByClassName('banner-title-2-heading');
 setInterval(function(){
