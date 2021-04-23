@@ -42,7 +42,6 @@ window.onresize = function(){
         real_reviews[0].style.top = navpage_header[0].offsetHeight + 'px';
     }else if(path == '/the-truth/'){
         global_container[0].style.top = navpage_header[0].offsetHeight + 'px';
-        console.log('aa');
     }
 
 }
