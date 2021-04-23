@@ -295,7 +295,9 @@
 
     }
 }
-
+footer.footer-info-links{
+    position:relative;
+}
 footer.row{
     background-color:#0c1221;
     padding-top:40px;
@@ -498,7 +500,9 @@ footer.powered-by{
     margin-top:10px;
 }
 .banner-title-container{
+    background-color:transparent;
     @media(max-width:550px){
+        background-color:white;
         br{
             display:none !important;
         }
@@ -843,3 +847,102 @@ footer.powered-by{
         display:none !important;
     }
 }
+.content-flex-center{
+    position:relative;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    padding-right:50px;
+    padding-left:50px;
+    .img-flex-xy-center{
+        padding-top:40px;
+        padding-bottom:40px;
+    }
+    .flex-vertical-center{
+        display:flex;
+        align-items: center;
+        padding:30px;
+
+        .text-black{
+            font-size:19px;
+            font-weight: bold;
+
+            small{
+                color:#858585;
+            }
+        }
+    }
+}
+span.color-light-blue,row.color-light-blue{
+    color:#53bcc1;
+}
+.catch{
+    position:relative;
+    padding:120px;
+    @media(max-width:1180px){
+        padding:10vw;
+    }
+    .color-light-blue{
+        font-size:3rem;
+        font-weight: bolder;
+        @media(max-width:1180px){
+            font-size:3.2vw;
+        }
+    }
+    .text-white{
+        font-size:2rem;
+    }
+    span.desc{
+        font-size:1rem;
+        color: #b3b3b3;
+    }
+
+}
+.btn-get-started{
+    &:hover{
+        background-color:#dc7979 !important;
+        color:white;
+        border:1px solid #dc7979 !important;
+    }
+
+}
+
+.head-title{
+    font-size:24px;
+    color:black;
+    font-weight:bolder;
+}
+.medium-title{
+    margin-top:0px;
+    margin-bottom:10px;
+    color:white;
+    font-weight:bold;
+}
+.banner-absolute-xy-center-content .heading-flex-title{
+    @media(max-width:731px){
+        font-size:4.5vw;
+    }
+}
+.footer-flex-title{
+    @media(max-width:731px){
+        font-size:2.8vw !important;
+    }
+}
+.heading-truth{
+    @media(max-width:731px){
+        font-size:2vw !important;
+    }
+
+}
+#dog-image{
+    @media(min-width:1850px){
+        width:100%;
+
+    }
+}
+
+//.footer-button-buy-mattress{
+//    @media(max-width:883px){
+//        width: 20vw !important;
+//    }
+//}

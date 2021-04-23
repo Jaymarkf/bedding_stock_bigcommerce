@@ -1,0 +1,197 @@
+---
+products:
+new:
+limit: {{theme_settings.homepage_new_products_count}}
+featured:
+limit: {{theme_settings.homepage_featured_products_count}}
+top_sellers:
+limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+recent_posts:
+limit: {{theme_settings.homepage_blog_posts_count}}
+---
+{{#partial "hero"}}
+{{{region name="home_below_menu"}}}
+{{#and carousel carousel.slides.length}}
+{{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
+{{/and}}
+{{{region name="home_below_carousel"}}}
+{{/partial}}
+
+{{#partial "page"}}
+
+{{#each shipping_messages}}
+{{> components/common/alert/alert-info message}}
+{{/each}}
+
+<div class="main full">
+    <style>
+        main.body{
+
+            margin-top:0 !important;
+
+            /*margin-bottom: 0 !important;*/
+        }
+        body{
+            background-color: #53bcc1 !important;
+        }
+        .navPages{
+            background:#3f3f3f !important;
+        }
+        .about-us-container{
+            position:relative;
+        }
+        #home_about_link:hover{
+            color:#6a82c0 !important;
+        }
+        footer.footer-info-links{
+            padding-top:80px !important;
+            background-color: #393939;
+        }
+        @media screen and (max-width:550px){
+            .banner-title-description{
+                color:black !important;
+            }
+            .text-black{
+                font-size:15px !important;
+            }
+            .text-back small{
+                line-height:14px;
+            }
+            #dog{
+                display:block !important;
+                position:relative;
+            }
+            #catch{
+                position: absolute;
+                z-index: 1;
+                height: 100%;
+                display: table-cell;
+                width: 100%;
+
+
+            }
+            #catch br{
+                display:none;
+            }
+            #catch .catch{
+                top:30%;
+            }
+           .catch span.color-light-blue{
+                color:#78f9ff;
+                text-shadow:1px 1px 7px black;
+               font-size:2rem !important;
+            }
+            .text-white{
+                text-shadow:1px  1px 7px black;
+            }
+            #dog-image{
+                filter:opacity(0.5);
+            }
+            span.desc{
+                color: #e2e2e2;
+                text-shadow:1px 1px 6px black;
+            }
+        }
+        @media screen and (max-width:460px){
+            .content-flex-center{
+                display:block !important;
+            }
+            .content-flex-center .flex-vertical-center .text-black{
+                font-weight: bold;
+                font-size: 19px !important;
+                line-height: 21px
+            }
+        }
+
+    </style>
+    <div class="about-us-container">
+        <div class="row bg-light" style="padding-left:10vw;padding-right:10vw;">
+            <div class="col py-2">
+                <a id="home_about_link" href="/" class="text-muted font-weight-bold" style="text-decoration: none">HOME</a>
+                <span>/</span>
+                <span class="text-danger font-weight-bold" style="text-decoration: none">SLEEP TRIAL</span>
+            </div>
+        </div>
+        <div class="row" style="position:relative;">
+            <div class="banner-container">
+                <img src="{{cdn 'assets/img/sleep-blind-fold.png'}}" class="custom-banner" style="width:100%;" alt="">
+                <div class="banner-title-container" >
+                    <div class="banner-title-heading">
+                        <span class="small-title-heading">DELIVERING ASSURANCE WITH OUR</span>
+                    </div>
+                    <div class="banner-title-body">
+                        <h4 class="banner-title-heading" style="margin-top:0px;font-size:3vw;">100-Night Sleep Trial</h4>
+                        <div class="banner-title-description" style="color:white;">
+                            Say goodbye to shameless firmness tests (and the super<br>
+                            awkward 'No. thanks' moment with the sales rep) with our<br>
+                            100-Night Sleep Trial!
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row position-relative" style="background-color: white;">
+            <div class="content-flex-center">
+                <div class="col img-flex-xy-center"><img src="{{cdn 'assets/img/bedtrial.png'}}" alt=""></div>
+                <div class="col flex-vertical-center">
+                    <div class="text-black">
+                        Bring home a bed for<br>
+                        <span class="color-light-blue">100 nights risk free</span><br>
+                        and sleep on it to your<br>
+                        heart's content!<br>
+                        <small>Yes! We're saying it's yours to test for 100 nights if that's the bed for you.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" id="dog" style="position:relative;display:flex;align-items: center;height:100%; background-color:black;justify-content: center;">
+            <div class="col" id="catch">
+                <div class="catch">
+                    <span class="color-light-blue d-block">
+                        What's The Catch?
+                    </span>
+                    <span class="text-white d-block">
+                        Nothing.
+                    </span>
+                    <span class="desc">
+                        We're s confident with our mattresses you might buy<br>
+                        another one at the end of your trial.<br>
+                        <br><div class="newline"></div>
+                        Still if you're unsure of your purchase and you want to<br>
+                        make a return, you'll receive a full refund. No questions.
+                    </span>
+                </div>
+            </div>
+            <div class="col" style="position:relative;"><img src="{{cdn 'assets/img/sleepy-dog.png'}}" style="position:relative;height:100%;" id="dog-image" alt=""></div>
+        </div>
+
+
+        <div class="row py-5" style="background-color:#53bcc1;margin-bottom:15px;">
+             <div class="col">
+                 <div class="text-center">
+                     <div class="text-center">
+                         <div class="head-title">
+                             Get Ready to Be Energized Everyday
+                         </div>
+                         <div class="medium-title">
+                             Start your 100-night trial!
+                         </div>
+                         <div class="button-red">
+                             <button class="btn btn-get-started" style="background-color: #e92828;border: 1px solid #e92828;color:white;padding:8px;padding-left:20px;padding-right:20px;">GET STARTED</button>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+{{/partial}}
+{{> layout/base}}

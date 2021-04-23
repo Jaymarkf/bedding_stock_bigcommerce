@@ -5,7 +5,8 @@
     "page": {
       "about-us.html": "/about-us/",
       "real-reviews.html": "/real-reviews/",
-      "the-truth.html" : "/the-truth/"
+      "the-truth.html" : "/the-truth/",
+      "100-night-sleep-trial.html": "/100-night-sleep-trial/"
 
     },
     "product": {}

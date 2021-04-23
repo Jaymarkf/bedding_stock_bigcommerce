@@ -36,7 +36,7 @@ window.onresize = function(){
     let height = (-document.documentElement.scrollTop) +row_top[0].offsetHeight;
     navpage_header[0].style.top = height + 'px';
     var path = window.location.pathname;
-    if(path == '/about-us/'){
+    if(path == '/about-us/' || path == '/100-night-sleep-trial/'){
         about_container[0].style.top = navpage_header[0].offsetHeight + 'px';
     }else if(path == '/real-reviews/'){
         real_reviews[0].style.top = navpage_header[0].offsetHeight + 'px';
