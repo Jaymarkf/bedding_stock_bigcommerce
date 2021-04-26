@@ -297,6 +297,7 @@
 }
 footer.footer-info-links{
     position:relative;
+    padding-bottom:20px;
 }
 footer.row{
     background-color:#0c1221;
@@ -774,6 +775,20 @@ footer.powered-by{
     padding-right:0;
 }
 .global-container{
+    .breadcrumb {
+        background-color:transparent;
+        text-transform: uppercase;
+        text-decoration:none;
+    }
+    .breadcrumb > * {
+        text-decoration:none;
+    }
+    .breadcrumb.is-active > .breadcrumb-label {
+        color: #ff0000;
+        text-transform: uppercase;
+        font-weight:bold;
+        text-decoration: none;
+    }
     .truth-heading{
         .light-blue{
             color: #53bcc1;
@@ -940,9 +955,67 @@ span.color-light-blue,row.color-light-blue{
 
     }
 }
+.col-md-12,.col-md-6{
+    margin:0;
+    padding:0;
+}
+.post_title{
+    text-decoration:none;
+    font-family:Poppins;
+    font-size:1.6rem;
+    color:black !important;
+    @media(max-width: 800px){
+        font-size:1.4rem;
+    }
 
-//.footer-button-buy-mattress{
-//    @media(max-width:883px){
-//        width: 20vw !important;
-//    }
-//}
+}
+#click_blog_post{
+    color:gray;
+
+}
+
+.button m-0{
+    background-color: #f34848 !important;
+}
+.blog-post-col-6{
+    font-size:1.1vw;
+    @media(max-width:900px){
+        font-size:1rem;
+    }
+    @media(max-width:731px){
+        max-width: 100%;
+        min-width: 100%;
+        font-size:1rem;
+    }
+
+}
+.new-year-sale{
+    color:#53bcc1;
+    font-size:1.2rem;
+}
+.blog-paper-plane{
+    @media(max-width:767px){
+        width:8vw !important;
+    }
+}
+.container{
+    padding:0;
+}
+#setup-title{
+    font-size:4vw;
+}
+
+#setup-body{
+    font-size:1.31vw;
+    @media(max-width:670px){
+        font-size:1rem;
+    }
+    @media(max-width:500px){
+        padding-left:20px;
+        padding-right:20px;
+    }
+
+}
+.poppins{
+    font-family:Poppins;
+}

@@ -27,6 +27,14 @@ window.onload = function(){
     }else if(path == '/the-truth/'){
         global_container[0].style.top = navpage_header[0].offsetHeight + 'px';
         global_container[0].style.position = 'relative';
+    }else if(path == '/blog/'){
+        var top = parseInt(navpage_header[0].offsetHeight) - 29;
+        global_container[0].style.top =  top + 'px';
+        global_container[0].style.position = 'relative';
+    }else if(path == '/setup-care-instructions/'){
+        let top = parseInt(navpage_header[0].offsetHeight);
+        global_container[0].style.top = top + 'px';
+        global_container[0].style.position = 'relative';
     }
 
 
@@ -42,6 +50,12 @@ window.onresize = function(){
         real_reviews[0].style.top = navpage_header[0].offsetHeight + 'px';
     }else if(path == '/the-truth/'){
         global_container[0].style.top = navpage_header[0].offsetHeight + 'px';
+    }else if(path == '/blog/'){
+        var top = parseInt(navpage_header[0].offsetHeight) - 20;
+        global_container[0].style.top =  top + 'px';
+    }else if(path == '/setup-care-instructions/'){
+        let top = parseInt(navpage_header[0].offsetHeight);
+        global_container[0].style.top = top + 'px';
     }
 
 }
@@ -57,5 +71,3 @@ setInterval(function(){
    }
 
 },500);
-
-

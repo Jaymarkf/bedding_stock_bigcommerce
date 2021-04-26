@@ -1,0 +1,215 @@
+---
+products:
+new:
+limit: {{theme_settings.homepage_new_products_count}}
+featured:
+limit: {{theme_settings.homepage_featured_products_count}}
+top_sellers:
+limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+recent_posts:
+limit: {{theme_settings.homepage_blog_posts_count}}
+---
+{{#partial "hero"}}
+{{{region name="home_below_menu"}}}
+{{#and carousel carousel.slides.length}}
+{{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
+{{/and}}
+{{{region name="home_below_carousel"}}}
+{{/partial}}
+
+{{#partial "page"}}
+
+{{#each shipping_messages}}
+{{> components/common/alert/alert-info message}}
+{{/each}}
+
+<div class="main full">
+
+    <!--    {{#if products.featured}}-->
+    <!--        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}-->
+    <!--    {{/if}}-->
+    <!--    {{{region name="home_below_featured_products"}}}-->
+
+    <!--    {{#if products.top_sellers}}-->
+    <!--        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}-->
+    <!--    {{/if}}-->
+    <!--    {{{region name="home_below_top_products"}}}-->
+
+    <!--    {{#if products.new}}-->
+    <!--        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}-->
+    <!--    {{/if}}-->
+    <!--    {{{region name="home_below_new_products"}}}-->
+    <div class="row new-certificates text-center py-5 mr-0">
+        <div class="cx">
+            <div class="certificate-container">
+                <div class="head-certificate">
+                    <img class="img-fluid" src="{{cdn 'assets/img/certipur-us.png' }}">
+                    <div class="certificate-title-container">
+                        <span class="certificate-title">Certified Foams</span>
+                    </div>
+                </div>
+                <div class="certificate-description-container">
+                    <div class="text-center certificate-description">
+                        Being CertiPUR-US&reg; certified our foams are guaranteed free from chemicals that harm your health and the environment. All our products also carry the STANDARD 100 OEKO-TEX&reg; certification.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cx">
+            <div class="certificate-container">
+                <div class="head-certificate">
+                    <img class="img-fluid" src="{{cdn 'assets/img/warranty.png' }}">
+                    <div class="certificate-title-container">
+                        <span class="certificate-title">10-Year Warranty</span>
+                    </div>
+                </div>
+                <div class="certificate-description-container">
+                    <div class="text-center certificate-description">
+                        With Bedding Stock, you're in for a long-term friendship. Our mattresses ship with an honest 10-year warranty covering manufacturing and workmanship defects.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cx">
+            <div class="certificate-container">
+                <div class="head-certificate">
+                    <img class="img-fluid" src="{{cdn 'assets/img/half-moon.png' }}">
+                    <div class="certificate-title-container">
+                        <span class="certificate-title">100-Night Sleep Trial</span>
+                    </div>
+                </div>
+                <div class="certificate-description-container">
+                    <div class="text-center certificate-description">
+                        Try out your new Bedding Stock mattress with our 100-Night Comfort Guarantee! Sleep on it nap on it, chill on it-it's up to you! The mattress is yours to test for 100 nights.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cx">
+            <div class="certificate-container">
+                <div class="head-certificate">
+                    <img class="img-fluid" src="{{cdn 'assets/img/bed.png' }}">
+                    <div class="certificate-title-container">
+                        <span class="certificate-title">Feature Perfect Bed</span>
+                    </div>
+                </div>
+                <div class="certificate-description-container">
+                    <div class="text-center certificate-description">
+                        Our mattresses are designed to efficiently provide comfort, relief, and support while you sleep. We infused superior craftsmanship with modern mattress architecture to create a feature-perfect bed.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bed-saving-main-container">
+
+        <div class="bed-savings-title-container">
+            <div class="bed-savings-title">
+                Bigger Savings
+            </div>
+        </div>
+        <div class="bed-savings-icon-description d-flex my-2">
+            <div class="bed-savings-icon">
+                <img src="{{cdn 'assets/img/package-icon.png'}}" class="img-icon-savings" width="60" alt="">
+            </div>
+            <div class="bed-savings-description d-block">
+                <div class="bed-savings-description-title">
+                    No Fancy Packaging
+                </div>
+                <div class="bed-savings-description-text">
+                    You don't have to pay to unnecessary costs including colorful wraps that have nothing to do with your mattress. We focus on what matters, and that's your bed and your sleep.
+                </div>
+            </div>
+        </div>
+        <div class="bed-savings-icon-description d-flex my-2">
+            <div class="bed-savings-icon">
+                <img src="{{cdn 'assets/img/money-icon.png'}}" class="img-icon-savings" width="60" alt="">
+            </div>
+            <div class="bed-savings-description d-block">
+                <div class="bed-savings-description-title">
+                    No Clever Advertising
+                </div>
+                <div class="bed-savings-description-text">
+                    Do you know how much of your payments go to advertising? Thousands of dollars! But here at Bedding Stock,we choose to be simple so we can offer quality items at fair prices.
+                </div>
+            </div>
+        </div>
+        <div class="bed-savings-icon-description d-flex my-2">
+            <div class="bed-savings-icon">
+                <img src="{{cdn 'assets/img/microphone-icon.png'}}" class="img-icon-savings" width="60" alt="">
+            </div>
+            <div class="bed-savings-description d-block">
+                <div class="bed-savings-description-title">
+                    No Paid-For Reviews
+                </div>
+                <div class="bed-savings-description-text">
+                    Who doesn't like getting good reviews? Sadly. though, industry reviews are becoming more biased towards the big names, and getting paid-for reviews only add up to costs
+                </div>
+            </div>
+        </div>
+        <div class="bed-savings-icon-description d-flex my-2" style="margin-bottom:0 !important;" >
+            <div class="bed-savings-icon">
+                <img src="{{cdn 'assets/img/label-icon.png'}}" class="img-icon-savings" width="60" alt="">
+            </div>
+            <div class="bed-savings-description d-block">
+                <div class="bed-savings-description-title">
+                    No 'Made in USA' Label
+                </div>
+                <div class="bed-savings-description-text">
+                    Our mattresses are sourced and manufactured outside the United States. Rest assured, though, that with our strict quality standards, you get the same level of quality from the USA at lesser costs like in China.
+                </div>
+            </div>
+        </div>
+
+        <div class="bed-savings-image-absolute">
+            <img src="{{cdn 'assets/img/bed-savings.png'}}" class="img-bed-savings" alt="">
+        </div>
+    </div>
+
+    <div class="bedding-structure-container">
+        <div class="bedding-structure-image-container">
+            <img src="{{cdn 'assets/img/bedding_structure.png'}}" class="bedding-structure-img" alt="">
+        </div>
+        <div class="bedding-structure-title-and-description">
+            <div class="bedding-structure-title">
+                <h3>What's In<br>A Luxe Mattress</h3>
+            </div>
+            <div class="bedding-structure-description">
+                Luxurious sleep compressed in four layers of performance <br> foam enclosed in a OEKO-&reg;<br>Standard 100 certified knitting fabric outer cover.
+            </div>
+            <div class="bedding-structure-button">
+                <div class="bedding-structure-button-label">
+                    SHOP MATTRESS
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-overview">
+        <div class="row"><div class="col"><div class="text-center"><div class="overview-top">MATTRESS</div></div></div></div>
+        <div class="row"><div class="col"><div class="text-center"><div class="overview">Overview</div></div></div></div>
+
+        <div class="row overview-image-main-container" style="padding-left:10rem;padding-right:10rem;margin-left:0 !important;margin-right:0 !important;">
+            <div class="overview-image-container">
+                <img src="{{cdn 'assets/img/mattress-care.jpg.jpg'}}"  class="img-fluid img-overview" alt="">
+            </div>
+            <div class="overview-image-container">
+                <img src="{{cdn 'assets/img/tell-tale.jpg.jpg'}}"  class="img-fluid img-overview" alt="">
+            </div>
+            <div class="overview-image-container">
+                <img src="{{cdn 'assets/img/sleeping-naked.jpg.jpg'}}"  class="img-fluid img-overview" alt="">
+            </div>
+            <div class="overview-image-container">
+                <img src="{{cdn 'assets/img/tips.jpg.jpg'}}"  class="img-fluid img-overview" alt="">
+            </div>
+        </div>
+    </div>
+
+</div>
+{{/partial}}
+{{> layout/base}}

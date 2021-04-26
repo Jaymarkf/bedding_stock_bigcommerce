@@ -1,0 +1,140 @@
+---
+products:
+new:
+limit: {{theme_settings.homepage_new_products_count}}
+featured:
+limit: {{theme_settings.homepage_featured_products_count}}
+top_sellers:
+limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+recent_posts:
+limit: {{theme_settings.homepage_blog_posts_count}}
+---
+{{#partial "hero"}}
+{{{region name="home_below_menu"}}}
+{{#and carousel carousel.slides.length}}
+{{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
+{{/and}}
+{{{region name="home_below_carousel"}}}
+{{/partial}}
+
+{{#partial "page"}}
+
+{{#each shipping_messages}}
+{{> components/common/alert/alert-info message}}
+{{/each}}
+
+<div class="main full">
+    <style>
+        main.body{
+
+            margin-top:0 !important;
+        }
+        .navPages{
+            background:#3f3f3f !important;
+        }
+        .about-us-container{
+            position:relative;
+        }
+        #home_about_link:hover{
+            color:#6a82c0 !important;
+        }
+        footer.footer-info-links{
+            padding-top:80px !important;
+            background-color: #393939;
+            position:relative;
+        }
+
+    </style>
+    <div class="global-container">
+        <div class="row bg-light" style="padding-left:10vw;padding-right:10vw;">
+            <div class="col py-2">
+                <a id="home_about_link" href="/" class="text-muted font-weight-bold" style="text-decoration: none">HOME</a>
+                <span>/</span>
+                <span class="text-danger font-weight-bold" style="text-decoration: none">THE TRUTH</span>
+            </div>
+
+        </div>
+        <div class="row position-relative">
+            <div class="banner-container">
+                <img src="{{cdn 'assets/img/setup-care-instruction-banner.png'}}" class="custom-banner" style="min-width:100%;position:relative;" alt="">
+                 <div class="position-absolute d-flex w-100 h-100 align-items-center justify-content-center" style="top:0;left:0;">
+                        <div class="container-flex">
+                                <div class="row">
+                                   <div class="col">
+                                       <div class="text-center">
+                                           <span class="text-white poppins font-weight-bold poppins"  id="setup-title">Set-up & Care Instructions</span>
+                                       </div>
+                                   </div>
+                                </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="text-center">
+
+                                            <p id="setup-body" class="text-white">
+                                                We know how excited you are to sleep on your brand new mattress.<br>
+                                                Just follow theses simple instructions and you'll be on your way to having a restful night's sleep.
+                                            </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                 </div>
+            </div>
+            </div>
+        </div>
+        <div class="row py-5">
+            <div class="col w-50">
+                <div class="text-center">
+                    <p class="mb-0 " style="color:gray;font-size:1.2rem;">Our mattresses are boxed in shippable boxed via FedEx.</p>
+                    <p class="mb-0"  style="color:gray;font-size:1.2rem;">Beddingstock mattresses are compressed and roled, then sealed in a thick, waterproof plastic wrap.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="text-center">
+                    <img src="{{cdn 'assets/img/stage1.png'}}" alt="">
+                    <div class="boxes-stage-container">
+                           Remove rolled mattress
+                           from box. Lay on foundation of your choice.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <img src="{{cdn 'assets/img/stage2.png'}}" alt="">
+                        <div class="boxes-stage-container">
+                            Cut away outer
+                            white wrapper.
+                        </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <img src="{{cdn 'assets/img/stage3.png'}}" alt="">
+                        <div class="boxes-stage-container">
+                              Unroll compressed mattress and cut away the clear
+                                plastic wrapper.
+                        </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <img src="{{cdn 'assets/img/stage4.png'}}" alt="">
+                        <div class="boxes-stage-container">
+                            Remove plastic. Mattress continues to expand fully.
+                        </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+{{/partial}}
+{{> layout/base}}

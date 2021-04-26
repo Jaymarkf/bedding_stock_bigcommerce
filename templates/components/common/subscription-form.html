@@ -1,27 +1,16 @@
-<h3 class="footer-info-heading">{{lang 'newsletter.subscribe'}}</h3>
-<p>{{lang 'newsletter.subscribe_intro'}}</p>
-
-<form class="form" action="{{urls.subscribe.action}}" method="post">
+<form class="form" action="{{urls.subscribe.action}}" method="post" style="margin:0 !important;">
     <fieldset class="form-fieldset">
         <input type="hidden" name="action" value="subscribe">
         <input type="hidden" name="nl_first_name" value="bc">
         <input type="hidden" name="check" value="1">
-        <div class="form-field">
-            <label class="form-label is-srOnly" for="nl_email">{{lang 'common.email_address'}}</label>
+        <div class="form-field border-bottom">
             <div class="form-prefixPostfix wrap">
-                <input class="form-input"
-                       id="nl_email"
-                       name="nl_email"
-                       type="email"
-                       value="{{customer.email}}"
-                       placeholder="{{lang 'newsletter.email_placeholder'}}"
-                       aria-describedby="alertBox-message-text"
-                       aria-required="true"
-                >
-                <input class="button button--primary form-prefixPostfix-button--postfix"
-                       type="submit"
-                       value="{{lang 'newsletter.subscribe_submit'}}"
-                >
+                <div class="input-group mb-3"  style="height:4vw;">
+                    <input type="text" class="form-control" placeholder="{{lang 'newsletter.email_placeholder'}}" aria-required="true" aria-label="Recipient's username" aria-describedby="alertBox-message-text">
+                    <div class="input-group-append">
+                        <button class="fa fa-paper-plane blog-paper-plane" style="background-color: #53bcc1;color:white;width: 3vw;" type="button"></button>
+                    </div>
+                </div>
             </div>
             {{#if settings.show_newsletter_summary }}
                 <div class="footer-newsletter-summary">{{settings.newsletter_summary}}</div>
