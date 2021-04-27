@@ -8,7 +8,10 @@
       "the-truth.html" : "/the-truth/",
       "100-night-sleep-trial.html": "/100-night-sleep-trial/",
       "blog.html": "/blog/",
-      "setup-care-instructions.html" : "/setup-care-instructions/"
+      "setup-care-instructions.html" : "/setup-care-instructions/",
+      "faqs.html" : "/faqs/",
+      "shipping-transit-chart.html" : "/shipping-transit-chart/",
+      "product-certification-features.html" : "/product-certification-features/"
 
     },
     "product": {}

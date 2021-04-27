@@ -1,0 +1,244 @@
+---
+products:
+new:
+limit: {{theme_settings.homepage_new_products_count}}
+featured:
+limit: {{theme_settings.homepage_featured_products_count}}
+top_sellers:
+limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+recent_posts:
+limit: {{theme_settings.homepage_blog_posts_count}}
+---
+{{#partial "hero"}}
+{{{region name="home_below_menu"}}}
+{{#and carousel carousel.slides.length}}
+{{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
+{{/and}}
+{{{region name="home_below_carousel"}}}
+{{/partial}}
+
+{{#partial "page"}}
+
+{{#each shipping_messages}}
+{{> components/common/alert/alert-info message}}
+{{/each}}
+
+<div class="main full">
+    <style>
+        main.body{
+
+            margin-top:0 !important;
+        }
+        .navPages{
+            background:#3f3f3f !important;
+        }
+        .about-us-container{
+            position:relative;
+        }
+        #home_about_link:hover{
+            color:#6a82c0 !important;
+        }
+        footer.footer-info-links{
+            padding-top:80px !important;
+            background-color: #393939;
+            position:relative;
+        }
+
+    </style>
+    <div class="global-container">
+        <div class="row bg-light" style="padding-left:10vw;padding-right:10vw;">
+            <div class="col py-2">
+                <a id="home_about_link" href="/" class="text-muted font-weight-bold" style="text-decoration: none">HOME</a>
+                <span>/</span>
+                <span class="text-danger font-weight-bold" style="text-decoration: none">FAQS</span>
+            </div>
+        </div>
+        <div class="row position-relative">
+            <div class="banner-container">
+                <img src="{{cdn 'assets/img/dog-faq.png'}}" class="banner-care" style="min-width:100%;position:relative;" alt="">
+                <div class="position-absolute d-flex w-100 h-100 align-items-center justify-content-center" style="top:0;left:0;">
+                    <div class="container-flex">
+                        <div class="row">
+                            <div class="col">
+                                <div class="text-center">
+                                    <span class="text-white poppins font-weight-bold poppins"  id="setup-title" style="color:#53bcc1 !important;">FAQ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="text-center">
+                                    <p id="setup-body" class="text-white">
+                                       Frequently Asked Questions
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="faqs-container">
+
+            <section class="section-two  container">
+
+
+                <div class="flex-box">
+                    <div class="faqs-title">
+                        <h2>About The Mattress</h2>
+                    </div>
+                    <div class="faqs-list">
+                        <div class="faqs-item">
+                            <h3 class="collapsible" >How long should I wait before I can use my new mattress? </h3>
+                            <div class="faqs-content" >
+                                <p>
+                                    On average, our mattress takes 48 hours to one week for it to fully decompress.
+                                    However, you may start using your new mattress right away.
+                                    In fact, sleeping on your mattress can help with the decompression as well.
+                                    Read our <a href="https://beddingstock.com/setup-care-instructions">set-up and care instructions</a> to know more.
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="faqs-item">
+                            <h3 class="collapsible" >Will my new Beddingstock mattress smell or off-gas?</h3>
+                            <div class="faqs-content" >
+                                <p>
+                                    It is common for new memory foam mattresses to smell or off-gas upon unboxing because of its materials.
+                                    But, you shouldn’t worry. Though the odor from mattress off-gassing is unpleasant, it isn’t harmful for most people.
+                                    More so, the smell will often quickly go away.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faqs-item">
+                            <h3 class="collapsible">Does your mattress work on an adjustable bed?</h3>
+                            <div class="faqs-content" >
+                                <p>
+                                    Yes, all Beddingstock mattresses work well with adjustable beds.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faqs-item">
+                            <h3 class="collapsible">Can I flip my Beddingstock mattress?</h3>
+                            <div class="faqs-content" >
+                                <p>
+                                    We recommend that you don’t. Because memory foam mattresses are constructed from top to
+                                    bottom with memory foam as the top layer and polyurethane foam as the bottom layer,
+                                    flipping your mattress upside down will not provide you the best comfort and support.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faqs-item">
+                            <h3 class="collapsible">Will a memory foam mattress make me sleep hot?</h3>
+                            <div class="faqs-content" >
+                                <p>
+                                    Not a chance. All the layers of memory foam in our mattresses are gel-infused and expertly crafted with optimal airflow and breathability.
+                                    The gel-infused memory foams we use on our mattresses help dissipate heat and regulate body temperature for a more refreshing, more comfortable sleep.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faqs-item">
+                            <h3 class="collapsible">Is the zippered mattress cover removable/washable?</h3>
+                            <div class="faqs-content" >
+                                <p>
+                                    Yes, the zippered mattress cover is removable and washable. It can be machine-washed on a gentle cycle and then air-dried.
+                                    But, make sure only to use cold water when washing and avoid heat when drying.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faqs-item">
+                            <h3 class="collapsible">What type of foundation should I use for my mattress?</h3>
+                            <div class="faqs-content" >
+                                <p>
+                                    Any among a box spring, steel base, or a platform bed foundation is ideal to go under a memory foam mattress.
+                                    The harder the surface, the better the memory foam mattress will perform.
+                                    If you don’t have any foundation that has a “give,” you can simply put a piece of plywood on top of it to give the mattress the proper support it needs.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faqs-item">
+                            <h3 class="collapsible">Where do you manufacture your mattresses?</h3>
+                            <div class="faqs-content" >
+                                <p>
+                                    We manufacture our mattresses in China and stock them in the USA.
+                                    But, regardless of country of origin, all our sleep products are manufactured under strict quality assurance standards.
+                                    Our mattresses have CertiPUR-US and OEKO-TEX Standard 100 certifications.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="flex-box">
+
+                    <div class="faqs-title">
+                        <h2>ABOUT Beddingstock</h2>
+                    </div>
+                    <div class="faqs-list">
+                        <div class="faqs-item">
+                            <h3 class="collapsible">How is Beddingstock different from other mattress companies?</h3>
+                            <div class="faqs-content" >
+                                <p>
+                                    We’re known for providing premium quality sleep products at affordable prices.
+                                    But, on top of that, we always make sure all our sleep products undergo strict quality control by accredited, independent labs to ensure the highest standard and durability.
+                                    Furthermore, we utilize natural, eco-friendly materials as part of our green initiative.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faqs-item">
+                            <h3 class="collapsible">How do Beddingstock mattresses compare to brands like Sealy, Serta, and Tempur-Pedic?</h3>
+                            <div class="faqs-content" >
+                                <p>
+                                    While we can’t compare model to model, we can say that our mattresses are preferred over
+                                    some of the big-name brands by many of our customers because of our quality and affordability.
+                                    We can provide real customer <a href="https://beddingstock.com/real-reviews">feedback</a> to back up this claim.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faqs-item">
+                            <h3 class="collapsible">How can Beddingstock sell for less?</h3>
+                            <div class="faqs-content" >
+
+                                <p>
+                                    We source our sleep products directly from the manufacturer that produces exclusively for us.
+                                    All our products come directly from the factory straight to our warehouse, cutting down additional unnecessary costs.
+                                    Because our products are only sold online, unlike traditional brick-and-mortar stores, we can cut down on other costs such as distribution, rent, etc.
+                                    as well without sacrificing the quality of our sleep products.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-box">
+                    <div class="faqs-title">
+                        <h2>RETURNS &amp; EXCHANGES</h2>
+                    </div>
+                    <div class="faqs-list">
+                        <div class="faqs-item" >
+                            <h3 class="collapsible">What should I do if I’m not satisfied with the mattress?</h3>
+                            <div class="faqs-content">
+                                <p>
+                                    As per our return policy, customers may return the mattress within 100 days and receive a full refund.
+                                    However, customers are responsible for all return shipping and packing costs. More on Beddingstock's return policy <a href="https://beddingstock.com/100-night-sleep-trial">here</a>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+        </div>
+    </div>
+
+</div>
+{{/partial}}
+{{> layout/base}}

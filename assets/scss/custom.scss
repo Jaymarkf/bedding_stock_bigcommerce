@@ -464,6 +464,9 @@ footer.powered-by{
         .img-1-footer{
             padding-left:5vw;
             padding-right:10px;
+            @media(max-width:490px){
+                top:-2px !important;
+            }
 
 
         }
@@ -494,6 +497,11 @@ footer.powered-by{
         width:14%;
         margin-right:20vw;
         margin-top:10vw;
+    }
+    .banner-care{
+        @media(max-width:541px){
+            height:200px;
+        }
     }
 }
 .newline{
@@ -1003,19 +1011,255 @@ span.color-light-blue,row.color-light-blue{
 }
 #setup-title{
     font-size:4vw;
+    @media(max-width:541px){
+        font-size:1.4rem;
+    }
 }
 
 #setup-body{
     font-size:1.31vw;
+    padding:0 80px;
     @media(max-width:670px){
         font-size:1rem;
+        padding:0 40px;
     }
     @media(max-width:500px){
-        padding-left:20px;
-        padding-right:20px;
+      padding: 0 20px;
+    }
+    @media(max-width:380px){
+        line-height:16px;
     }
 
 }
 .poppins{
     font-family:Poppins;
+}
+.stage-col{
+    @media(max-width:900px){
+       min-width:50%;
+    }
+    .stage-main-container{
+        .stage-container{
+            padding:10px;
+        }
+        .boxes-stage-container {
+            position:relative;
+            background-color:#52bac1;
+            height:120px;
+            bottom:25px;
+            z-index: -1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color:white;
+            font-family: Poppins;
+            padding-top:22px;
+            padding-left:10px;
+            padding-right:10px;
+            font-size:1vw;
+            @media(max-width: 820px){
+                font-size:1rem !important;
+            }
+            @media(max-width:888px){
+                font-size:0.8rem;
+            }
+        }
+    }
+}
+
+.faqs-container{
+
+    .section-two{
+        padding: 5% 0;
+        .flex-box{
+            display:flex;
+            margin-top: 5%;
+            @media (max-width:768px){
+                margin-top: 5% !important;
+                display:block;
+            }
+
+            .faqs-title{
+                width: 30%;
+                text-align:center;
+                @media (max-width:768px){
+                    width: 100% !important;
+
+                }
+
+                h2{
+                    color:#282828;
+                    margin: 10px 0;
+                    font-weight: bold;
+                }
+            }
+
+            .faqs-list{
+                width:70%;
+                padding: 0 2%;
+                @media (max-width: 768px){
+                    width: 100%;
+                    padding: 0 4%;
+                }
+
+                .faqs-item{
+                    display:inline-block;
+                    border-bottom: 1px solid #cccccc;
+                    width:100%;
+
+                    .collapsible {
+                        cursor: pointer;
+                        padding: 18px;
+                        width: 100%;
+                        border: none;
+                        text-align: left;
+                        outline: none;
+                        font-size: 15px;
+                    }
+
+                    .active, .collapsible:hover {
+
+                    }
+
+                    .collapsible:after {
+                        content: '\002B';
+                        color: white;
+                        font-weight: bolder;
+                        float: right;
+                        margin-left: 5px;
+                        background: #53bcc1;
+                        border-radius: 50%;
+                        padding: 0px 3px 0px 4px;
+                        font-size: 20.5px;
+                        line-height: 1;
+                    }
+
+                    .active:after {
+                        content: "\2212";
+                    }
+
+                    .faqs-content{
+                        padding: 0 18px;
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: all 0.4s;
+
+
+                    }
+
+
+                    h3{
+
+                        color:#53bcc1;
+                        margin: 0;
+                        font-weight: bold;
+                    }
+
+                    .faqs-content{
+                        color:#666666;
+                        p{
+                            padding: 1% 4%;
+                            text-align: left;
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+//ship
+#ship-body{
+    @media(min-width:768px){
+        padding-left:14vw !important;
+        padding-right:14vw !important;
+    }
+    @media(min-width:1024px){
+        padding-left:20vw !important;
+        padding-right:20vw !important;
+
+    }
+    @media(min-width:1278px){
+        padding:0 25vw !important;
+    }
+    .newline{
+        @media(min-width:1024px){
+            padding-top:10px;
+            padding-bottom:10px;
+
+        }
+    }
+}
+.container-table-shipping {
+    padding-bottom:10vw;
+    overflow-x:auto;
+    @media(max-width:755px){
+        font-size:0.7rem;
+    }
+    .table-shipping {
+        thead tr th {
+            color: white;
+            text-align: center;
+            @media(max-width:755px){
+                font-size:0.7rem;
+            }
+        }
+
+        tbody tr td {
+            text-align: center;
+            font-family: Poppins;
+        }
+
+        tbody tr td .asterisk {
+            color: red;
+        }
+    }
+}
+.cert-title{
+    font-family: Poppins;
+    font-size:4rem;
+    font-weight: 900;
+
+}
+.cert-subtitle{
+    font-family: Poppins;
+    font-size:1.2rem;
+    padding:0 8vw;
+        .newline{
+            display:block;
+            width:100%;
+            margin:0 !important;
+
+    }
+}
+//certificate logo banner
+.col-cert{
+    padding : 2vw 5vw;
+    .img-cert-container{
+
+    }
+    .img-below-title{
+        font-size:2.5rem;
+        color:#53bcc1;
+        font-family: Poppins;
+        font-weight: 900;
+    }
+    .label-cert{
+        position:relative;
+        padding:0 2vw;
+        text-align:center;
+    }
+}
+.parallax1{
+    background: url(../img/parallax1.png);
+    background-size:contain;
+    position: static;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    height: auto;
+    overflow: hidden;
 }

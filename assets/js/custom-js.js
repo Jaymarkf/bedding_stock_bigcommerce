@@ -31,7 +31,7 @@ window.onload = function(){
         var top = parseInt(navpage_header[0].offsetHeight) - 29;
         global_container[0].style.top =  top + 'px';
         global_container[0].style.position = 'relative';
-    }else if(path == '/setup-care-instructions/'){
+    }else if(path == '/setup-care-instructions/' || path == '/faqs/' || path == '/shipping-transit-chart/' || path == '/product-certification-features/'){
         let top = parseInt(navpage_header[0].offsetHeight);
         global_container[0].style.top = top + 'px';
         global_container[0].style.position = 'relative';
@@ -53,7 +53,7 @@ window.onresize = function(){
     }else if(path == '/blog/'){
         var top = parseInt(navpage_header[0].offsetHeight) - 20;
         global_container[0].style.top =  top + 'px';
-    }else if(path == '/setup-care-instructions/'){
+    }else if(path == '/setup-care-instructions/' || path == '/faqs/' || path == '/shipping-transit-chart/' || path == '/product-certification-features/'){
         let top = parseInt(navpage_header[0].offsetHeight);
         global_container[0].style.top = top + 'px';
     }
@@ -71,3 +71,21 @@ setInterval(function(){
    }
 
 },500);
+
+$(document).ready(function(){
+    var coll =  document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+
+                content.style.maxHeight = null;
+            } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    }
+});
