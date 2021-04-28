@@ -1,0 +1,215 @@
+//comparison
+.comparison-container{
+
+  .comparison-winner{
+    background: url('../img/comparison-banner.png') no-repeat fixed;
+    height:100vw;
+    max-height:900px;
+    width:100%;
+    top:0;
+    left:0;
+
+  }
+    .comparison-banner-title {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      left: 0;
+      top: 0;
+      margin-top: 5vw;
+      .d-block {
+        p, h1 {
+          margin: 0 0 6px;
+        }
+        h3{
+          color:black;
+          font-family: Poppins;
+          font-weight: 900;
+        }
+
+        h1 {
+          color: black;
+          font-size: 5vw;
+          font-family: Poppins;
+          font-weight: bold;
+          @media(max-width:768px){
+            font-size:3rem;
+          }
+          @media(max-width:516px){
+            font-size:2.3rem;
+          }
+          @media(max-width:400px){
+            font-size:2rem;
+          }
+        }
+         .newline{
+           margin:0;
+           width:100%;
+         }
+
+        p {
+          color: #424141;
+          font-size: 1.5vw;
+          font-weight:bold;
+          @media(max-width:768px){
+            font-size:1.1rem;
+          }
+          @media(max-width:516px){
+            font-size:0.9rem;
+          }
+        }
+      }
+      .budget-problem{
+        margin-left:15vw;
+        @media(max-width: 516px){
+          text-align: center !important;
+          margin-left:0;
+        }
+      }
+
+    }
+    .night-space{
+            background: url(../img/night-space.png) 50% 0 no-repeat fixed;
+            position: relative;
+            height: 1200px;
+            overflow: hidden;
+            width:100%;
+            display: flex;
+            align-items: center;
+            @media(max-width:801px){
+              display:block !important;
+              padding-top:40px;
+            }
+            .col-6{
+              @media(max-width:801px){
+                width:100%;
+                max-width:100%;
+              }
+                .row-2-head{
+                  font-size:3rem;
+                  line-height:46px;
+                  color:white;
+                  font-weight:900;
+                  margin-bottom:15px;
+                  @media(max-width:960px){
+                    font-size:2.3rem;
+                  }
+                }
+                .row-2-body{
+                  color:white;
+                  font-size:1.2rem;
+                  @media(max-width:960px){
+                    br{
+                      display:none;
+                    }
+                  }
+                }
+            }
+        }
+    .row3 h1{
+      font-family: 'Poppins';
+      font-weight: 900;
+      color: #111111;
+    }
+
+  .bolder{
+    font-weight: 900;
+  }
+  .black{
+    color:black;
+  }
+  .pads-3{
+    padding-left:10vw;
+    padding-right:10vw;
+    .fa-check-circle,.fa-times-circle{
+        font-size:1.4rem;
+    }
+    table{
+      font-family: Poppins;
+    } tbody tr td:nth-child(1){
+      font-weight: 900;
+      font-size:1.1rem;
+    }
+    table thead tr{
+      background-color:white;
+
+    }
+    table thead tr th{
+      font-weight:900;
+      font-family: Poppins;
+      font-size:1.8rem;
+      text-align: center;
+    }
+    tbody tr td{
+      text-align: center;
+    }
+
+  }
+  .sleep-container{
+      .lefts{
+        padding-left:10vw;
+        padding-right:5px;
+        @media(max-width:1081px){
+          padding-left:3vw;
+          padding-right:5px;
+        }
+      }
+      .rights{
+        padding-left:5px;
+        padding-right:10vw;
+        .button-view-product{
+          background-color: #e92828;
+          color:white;
+          padding:13px;
+          font-size:1.2rem;
+          @media(max-width:731px){
+            font-size:1.3rem;
+            text-align: center;
+          }
+          &:hover{
+            cursor: pointer;
+            background-color:#EF5A5AFF;
+          }
+        }
+      }
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    h1{
+      font-weight: 900;
+      font-family: Poppins;
+      color:black;
+      text-shadow: 2px 1px 9px white;
+      @media(max-width:1081px){
+        font-size:1.8rem;
+      }
+      @media(max-width:731px){
+        font-size:2rem;
+      }
+      @media(max-width: 425px){
+        font-size:1.76rem;
+      }
+    }
+    p{
+      color:white;
+      font-size:1.4rem;
+      text-shadow:1px 2px 5px #000000;
+      @media(max-width:1081px){
+        font-size:1.1rem;
+      }
+      @media(max-width:731px){
+        font-size:1.3rem;
+      }
+      @media(max-width: 425px){
+        font-size:1rem;
+        text-shadow:2px 2px 2px black;
+      }
+    }
+  }
+}

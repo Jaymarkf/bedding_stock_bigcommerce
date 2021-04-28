@@ -1,0 +1,264 @@
+---
+products:
+new:
+limit: {{theme_settings.homepage_new_products_count}}
+featured:
+limit: {{theme_settings.homepage_featured_products_count}}
+top_sellers:
+limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+recent_posts:
+limit: {{theme_settings.homepage_blog_posts_count}}
+---
+{{#partial "hero"}}
+{{{region name="home_below_menu"}}}
+{{#and carousel carousel.slides.length}}
+{{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
+{{/and}}
+{{{region name="home_below_carousel"}}}
+{{/partial}}
+
+{{#partial "page"}}
+
+{{#each shipping_messages}}
+{{> components/common/alert/alert-info message}}
+{{/each}}
+
+<div class="main full">
+    <style>
+        main.body{
+
+            margin-top:0 !important;
+        }
+        .navPages{
+            background:#3f3f3f !important;
+        }
+        .about-us-container{
+            position:relative;
+        }
+        #home_about_link:hover{
+            color:#6a82c0 !important;
+        }
+        footer.footer-info-links{
+            padding-top:80px !important;
+            background-color: #393939;
+            position:relative;
+        }
+
+    </style>
+    <div class="global-container">
+        <div class="comparison-container">
+            <div class="row bg-light" style="padding-left:10vw;padding-right:10vw;">
+                <div class="col py-2">
+                    <a id="home_about_link" href="/" class="text-muted font-weight-bold" style="text-decoration: none">HOME</a>
+                    <span>/</span>
+                    <span class="text-danger font-weight-bold" style="text-decoration: none">COMPARISON</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="text-center comparison-winner" style="position:relative">
+                        <div class="comparison-banner-title">
+                           <div class="d-block" style="width:100%;">
+                               <div class="col text-center mb-5">
+                                   <p class="aos-item" data-aos="zoom-in" data-aos-duration="3000"  data-aos-mirror="true" >BE SMART</p>
+                                   <h1>Compare Bedding Stock</h1>
+                                   <p>Other mattress makers offer top-of-the-line products just like we do. We just<br>
+                                       chose to be wallet-friendly.
+                                   </p>
+                               </div>
+                               <div class="row">
+                                   <div class="text-left budget-problem mt-5" data-aos="zoom-out-right" data-aos-duration="3000"  data-aos-mirror="true">
+                                       <h3>On a budget? Not a problem.</h3>
+                                       <div class="newline"></div>
+                                       <p class="text-muted">When looking for a new mattress,<br>
+                                        $350 may not seem like much.
+                                       </p>
+                                   </div>
+                               </div>
+                           </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col night-space">
+                    <div class="col-6">
+                        <img src="{{cdn 'assets/img/comparison-bed.png'}}" data-aos="fade-right"
+                             data-aos-offset="300"
+                             data-aos-easing="ease-in-sine" alt="">
+                    </div>
+                    <div class="col-6">
+                        <div class="row-2-head">
+                           <span class="rowshead">
+                                But with Bedding Stock,<br>
+                                Your $350 can get you...
+                           </span>
+                        </div>
+                        <div class="row-2-body">
+                            <div class="row py-1" data-aos="fade-left"
+                                 data-aos-offset="300"
+                                 data-aos-easing="ease-in-sine">
+                                <div class="col">
+                                   <div class="row">
+                                       <div class="col-1 text-right">
+                                           <i class="fa fa-arrow-circle-right text-success"></i>
+                                       </div>
+                                       <div class="col-11">
+                                           A well-made mattress equipped with exceptional features<br>
+                                           including pressure relief,cooling and airflow, motion<br>
+                                           isolation, and dense core support
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="row py-2"
+                                 data-aos="fade-left"
+                                 data-aos-offset="300"
+                                 data-aos-easing="ease-in-sine">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col-1 text-right">
+                                            <i class="fa fa-arrow-circle-right text-success"></i>
+                                        </div>
+                                        <div class="col-11">
+                                            A 10-year warranty that covers manufacturing and<br> workmanship defects
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row py-2" data-aos="fade-left"
+                                 data-aos-offset="300"
+                                 data-aos-easing="ease-in-sine">
+                                <div class="col">
+                                   <div class="row">
+                                       <div class="col-1 text-right">
+                                           <i class="fa fa-arrow-circle-right text-success"></i>
+                                       </div>
+                                       <div class="col-11 ">
+                                           A certified and tested product made from eco-friendly<br>
+                                           materials that do not harm-your health and our planet
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="row py-2" data-aos="fade-left"
+                                 data-aos-offset="300"
+                                 data-aos-easing="ease-in-sine">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col-1 text-right">
+                                            <i class="fa fa-arrow-circle-right text-success"></i>
+                                        </div>
+                                        <div class="col-11">
+                                            A reliable customer support to provide timely and needed<br>
+                                            assistance and after-sales service.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center d-block">
+                    <h1 class="bolder poppins black">Be Smart & Compare</h1>
+            </div>
+            <div class="row text-center d-block">
+                <h4 class="poppins mt-0">See how far $350 can get with our competitors.</h4>
+            </div>
+            <div class="row text-center d-block">
+                <div class="pads-3" style="overflow-x:auto;">
+                    <table class="table table-bordered table-stripped table-hover" >
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>CertiPUR-US&reg;</th>
+                            <th>OEKO-TEX&reg;</th>
+                            <th>TRIAL PERIOD&reg;</th>
+                            <th>Price Range&reg;</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr style="background-color: rgba(0,0,0,.075);border:3px solid #53bcc1 !important;" data-aos="zoom-in" data-aos-duration="3000">
+                            <td>Bedding Stock</td>
+                            <td><i class="fa fa-check-circle text-success"></i></td>
+                            <td><i class="fa fa-check-circle text-success"></i></td>
+                            <td>120 Nights</td>
+                            <td>$350 - $450</td>
+                        </tr>
+                        <tr>
+                            <td>Casper</td>
+                            <td><i class="fa fa-check-circle text-success"></i></td>
+                            <td><i class="fa fa-check-circle text-success"></i></td>
+                            <td>100 Nights</td>
+                            <td>$550 - $1,150</td>
+                        </tr>
+                        <tr>
+                            <td>Lessa</td>
+                            <td><i class="fa fa-check-circle text-success"></i></td>
+                            <td><i class="fa fa-times-circle text-danger text-success"></i></td>
+                            <td>100 Nights</td>
+                            <td>$525 - $990</td>
+                        </tr>
+                        <tr>
+                            <td>Serta</td>
+                            <td><i class="fa fa-check-circle text-success"></i></td>
+                            <td><i class="fa fa-times-circle text-danger text-success"></i></td>
+                            <td>45 - 100 Nights</td>
+                            <td>$330 - $3500</td>
+                        </tr>
+                        <tr>
+                            <td>Tempur-Pedic</td>
+                            <td><i class="fa fa-times-circle text-danger text-success"></i></td>
+                            <td><i class="fa fa-times-circle text-danger text-success"></i></td>
+                            <td>90 Nights</td>
+                            <td>$2500 - $3200</td>
+                        </tr>
+                        <tr>
+                            <td>Simmons</td>
+                            <td><i class="fa fa-check-circle text-success"></i></td>
+                            <td><i class="fa fa-times-circle text-danger text-success"></i></td>
+                            <td>120 Nights</td>
+                            <td>$340 - $5100</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <img src="{{cdn 'assets/img/sleep1.png'}}" alt="">
+                    <div class="sleep-container">
+                       <div class="d-block lefts">
+                           <div class="row">
+                               <h1>NOW THAT'S BIGGER SAVINGS!</h1>
+                           </div>
+                           <div class="row">
+                               <p>Your $350 can go to great lengths if you choose<br>
+                                   Bedding Stock. All you have to do is to be smart.</p>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="{{cdn 'assets/img/sleep2.png'}}" style="background-color: blue;"alt="">
+                    <div class="sleep-container">
+                        <div class="d-block rights">
+                            <div class="row">
+                                <h1>Experience Better Sleep</h1>
+                            </div>
+                            <div class="row">
+                                <div class="button-view-product">VIEW PRODUCT</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}

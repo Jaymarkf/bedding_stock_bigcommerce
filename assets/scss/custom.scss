@@ -1,3 +1,5 @@
+@import 'custom2';
+
 .row{
     margin:0 !important;
 }
@@ -897,8 +899,10 @@ footer.powered-by{
     }
 }
 span.color-light-blue,row.color-light-blue{
+    font-family: Poppins;
     color:#53bcc1;
 }
+
 .catch{
     position:relative;
     padding:120px;
@@ -1223,6 +1227,9 @@ span.color-light-blue,row.color-light-blue{
     font-family: Poppins;
     font-size:4rem;
     font-weight: 900;
+    @media(max-width:731px){
+        font-size:3rem;
+    }
 
 }
 .cert-subtitle{
@@ -1255,11 +1262,108 @@ span.color-light-blue,row.color-light-blue{
     }
 }
 .parallax1{
-    background: url(../img/parallax1.png);
-    background-size:contain;
-    position: static;
+    background: url(../img/parallax1.png) 50% 0 no-repeat fixed;
+    position: relative;
     padding-left: 10vw;
     padding-right: 10vw;
-    height: auto;
+    height: 700px;
     overflow: hidden;
+    width:100%;
+    display: flex;
+    align-items: center;
+    @media(max-width:731px){
+        padding-left:6vw;
+        padding-right:0 !important;
+
+    }
+
+    .charcoal-title-desk{
+        color:white;
+        width:30vw;
+        font-size:1.2rem;
+        @media(max-width:731px){
+            width:80vw;
+        }
+    }
+
 }
+.title-container-absolute{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+}
+.text-medium{
+    font-size:2.5rem;
+    @media(max-width:731px){
+        font-size:1.8rem;
+    }
+}
+.text-small{
+    font-size:1.2rem;
+}
+.f-2{
+    margin-right:10vw;
+    .f2{
+        line-height:32px;
+    }
+}
+.parallax2{
+    background: url(../img/girls-back.png) 50% 0 no-repeat fixed;
+    position: relative;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    height: 700px;
+    overflow: hidden;
+    width:100%;
+    display: flex;
+    align-items: center;
+    @media(max-width:731px){
+        padding-left:6vw;
+        padding-right:0 !important;
+
+    }
+    .charcoal-title-desk{
+        color:white;
+        width:30vw;
+        font-size:1.2rem;
+        @media(max-width:731px){
+            width:80vw;
+        }
+    }
+}
+.parallax3{
+    background: url(../img/bed-play.png) 50% 0 no-repeat fixed;
+    position: relative;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    height: 700px;
+    overflow: hidden;
+    width:100%;
+    display: flex;
+    align-items: center;
+    @media(max-width:731px){
+        padding-left:6vw;
+        padding-right:0 !important;
+
+    }
+    .charcoal-title-desk{
+        color:white;
+        width:30vw;
+        font-size:1.2rem;
+        @media(max-width:731px){
+            width:80vw;
+        }
+    }
+}
+.fix-parallax{
+
+    .f-2{
+        @media(max-width:731px){
+            padding-left:6vw;
+            padding-right:0 !important;
+        }
+    }
+}
+
