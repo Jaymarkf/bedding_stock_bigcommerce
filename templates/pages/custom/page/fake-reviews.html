@@ -11,14 +11,6 @@ blog:
 recent_posts:
 limit: {{theme_settings.homepage_blog_posts_count}}
 ---
-{{#partial "hero"}}
-{{{region name="home_below_menu"}}}
-{{#and carousel carousel.slides.length}}
-{{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
-{{/and}}
-{{{region name="home_below_carousel"}}}
-{{/partial}}
-
 {{#partial "page"}}
 
 {{#each shipping_messages}}
@@ -122,7 +114,7 @@ limit: {{theme_settings.homepage_blog_posts_count}}
                             integrity and honesty. And the cost of paid-for reviews might only end up on your invoice.
                             <span class="newline"></span>
                             We will not let that happen.
-                            <span class="newline" style="margin-bottom:2vw;"></span>
+                            <span class="newline" style="margin-bottom:2vw; !important"></span>
                             <a href="/real-reviews" style="text-decoration:none;color:white" >
                                 <span class="read-bedding-button">READ BEDDING STOCK REVIEWS</span>
                             </a>
