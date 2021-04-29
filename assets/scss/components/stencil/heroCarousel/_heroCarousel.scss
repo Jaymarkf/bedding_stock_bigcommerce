@@ -12,7 +12,7 @@
 // 3. Allows image to scale on large screens while preventing the top and bottom
 //    from becoming cut off.
 // -----------------------------------------------------------------------------
-@font-face {font-family: "Tw Cen MT Condensed Extra Bold"; src: url("//db.onlinewebfonts.com/t/6f30da158731ad84745d00cc96e35e5e.eot"); src: url("//db.onlinewebfonts.com/t/6f30da158731ad84745d00cc96e35e5e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/6f30da158731ad84745d00cc96e35e5e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/6f30da158731ad84745d00cc96e35e5e.woff") format("woff"), url("//db.onlinewebfonts.com/t/6f30da158731ad84745d00cc96e35e5e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/6f30da158731ad84745d00cc96e35e5e.svg#Tw Cen MT Condensed Extra Bold") format("svg"); }
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 .heroCarousel {
     width: 1px;
     min-width: 100%;
@@ -210,7 +210,7 @@
 
     font-size: fontSize("small");
     margin-top: 0;
-    font-family: "Tw Cen MT Condensed Extra Bold" !important;
+    font-family: "Poppins" !important;
 
     @include breakpoint("medium") {
         font-size: fontSize("hero");

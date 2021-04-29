@@ -1,5 +1,5 @@
 @import 'custom2';
-
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 .row{
     margin:0 !important;
 }
@@ -27,7 +27,7 @@
         padding-bottom:10px;
         .certificate-title{
             color:white;
-            font-family: "Tw Cen MT Condensed Extra Bold";
+            font-family: "Poppins";
             font-size:1.6rem;
             @media(min-width:1120px){
                 font-size:2.4rem;
@@ -60,7 +60,7 @@
         width:100%;
         margin-bottom:7%;
         .bed-savings-title{
-            font-family: "Tw Cen MT Condensed Extra Bold";
+            font-family: "Poppins";
             color:#222222;
             font-size:4rem;
             line-height:50px;
@@ -168,7 +168,7 @@
         }
         .bedding-structure-title > *{
             color:white;
-            font-family: "Tw Cen MT Condensed Extra Bold";
+            font-family: "Poppins";
             font-size:3vw;
             margin:0;
             @media(max-width:1250px){
@@ -229,7 +229,7 @@
         letter-spacing: 2px;
     }
     .overview{
-        font-family:"Tw Cen MT Condensed Extra Bold";
+        font-family:"Poppins";
         font-size:4rem;
         letter-spacing: 2px;
         &::before{
@@ -347,7 +347,7 @@ footer.row{
         .footer-header {
             font-size: 36px;
             color: white;
-            font-family: "Tw Cen MT Condensed Extra Bold";
+            font-family: "Poppins";
             padding-bottom:10px;
             border-bottom:1px solid white;
 
@@ -485,7 +485,7 @@ footer.powered-by{
 
 }
 
-@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 
 //about us
 //banner1

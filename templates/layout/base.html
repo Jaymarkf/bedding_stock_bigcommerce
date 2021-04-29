@@ -9,7 +9,7 @@
 
         <link href="{{ head.favicon }}" rel="shortcut icon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="//db.onlinewebfonts.com/c/6f30da158731ad84745d00cc96e35e5e?family=Tw+Cen+MT+Condensed+Extra+Bold" rel="stylesheet" type="text/css"/>
+<!--        <link href="//db.onlinewebfonts.com/c/6f30da158731ad84745d00cc96e35e5e?family=Tw+Cen+MT+Condensed+Extra+Bold" rel="stylesheet" type="text/css"/>-->
         <script>
             {{!-- Change document class from no-js to js so we can detect this in css --}}
             document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -91,15 +91,18 @@
 </html>
 
 <script>
-    AOS.init();
-  if(window.location.pathname == '/about-us/'){
-      let otslider = new OTSlider();
-      otslider.init({
-          duration: 3000,
-          autoPlay : true,
-          pauseOnHover : true
-      });
-  }
+  $(document).ready(function(){
+      AOS.init();
+      if(window.location.pathname == '/about-us/'){
+          let otslider = new OTSlider();
+          otslider.init({
+              duration: 3000,
+              autoPlay : true,
+              pauseOnHover : true
+          });
+      }
+
+  });
 
 
 
