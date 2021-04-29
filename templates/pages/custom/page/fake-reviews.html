@@ -1,0 +1,137 @@
+---
+products:
+new:
+limit: {{theme_settings.homepage_new_products_count}}
+featured:
+limit: {{theme_settings.homepage_featured_products_count}}
+top_sellers:
+limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+recent_posts:
+limit: {{theme_settings.homepage_blog_posts_count}}
+---
+{{#partial "hero"}}
+{{{region name="home_below_menu"}}}
+{{#and carousel carousel.slides.length}}
+{{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
+{{/and}}
+{{{region name="home_below_carousel"}}}
+{{/partial}}
+
+{{#partial "page"}}
+
+{{#each shipping_messages}}
+{{> components/common/alert/alert-info message}}
+{{/each}}
+
+<div class="main full">
+    <style>
+        main.body{
+
+            margin-top:0 !important;
+        }
+        .navPages{
+            background:#3f3f3f !important;
+        }
+        .about-us-container{
+            position:relative;
+        }
+        #home_about_link:hover{
+            color:#6a82c0 !important;
+        }
+        footer.footer-info-links{
+            padding-top:80px !important;
+            background-color: #393939;
+            position:relative;
+        }
+
+    </style>
+    <div class="global-container">
+        <div class="fake-reviews-container">
+            <div class="row bg-light" style="padding-left:10vw;padding-right:10vw;">
+                <div class="col py-2">
+                    <a id="home_about_link" href="/" class="text-muted font-weight-bold" style="text-decoration: none">HOME</a>
+                    <span>/</span>
+                    <span class="text-danger font-weight-bold" style="text-decoration: none">FAKE REVIEWS</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <img src="{{cdn 'assets/img/fake-reviews-banner.png'}}" style="height:100%;width:100vw;" id="banner1" alt="">
+                    <div class="absolute-flex-w-100-first">
+                       <div class="d-block" data-aos="fade-right" data-aos-duration="3000">
+                           <p class="m-0 text-white text-small">BREAKING THE SILENCE</p>
+                           <h1 class="display-4 mt-1 mb-0 text-light-blue bolder">Fake Reviews</h1>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row3">
+                <div class="col">
+                    <div class="text-center d-block">
+                        <h2 class="text-light-blue bolder mb-0">Quick answer</h2>
+                        <h2 class="text-black mt-0 bolder">Third-party reviewers</h2>
+                        <p class="text-gray">And we're absolutely positive on three things about them.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row row4">
+                <div class="col" data-aos="fade-up-right"  data-aos-duration="2000">
+                    <div class="icon-container" >
+                        <img src="{{cdn 'assets/img/fake-review1.png'}}" alt="">
+                    </div>
+                    <p class="text-gray">First, third-party reviewers are
+                    heavily incentivized to write positive reviews.</p>
+                </div>
+                <div class="col" data-aos="fade-up"  data-aos-duration="2000">
+                    <div class="icon-container" >
+                        <img src="{{cdn 'assets/img/fake-review2.png'}}" alt="">
+                    </div>
+                    <p class="text-gray">Second, secret business deals often propel
+                    the top brands to near-perfect consumer perspective.</p>
+                </div>
+                <div class="col" data-aos="fade-up-left"  data-aos-duration="2000">
+                    <div class="icon-container" >
+                        <img src="{{cdn 'assets/img/fake-review3.png'}}" alt="">
+                    </div>
+                    <p class="text-gray">Third, fake reviewers get paid for every
+                    unit sold through affiliate selling.</p>
+                </div>
+            </div>
+            <div class="row row5">
+                <div class="col">
+                    <img src="{{cdn 'assets/img/fake-review-footer1.png'}}" style="height:100%;width:100vw;" id="banner2" alt="">
+                    <div class="absolute-flex-w-100-center">
+                        <h2 class="text-white bolder">Credible or not? We leave that question for you to answer.</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row row6">
+                <div class="col">
+                    <img src="{{cdn 'assets/img/fake-review-footer2.png'}}" alt="">
+                </div>
+                <div class="col d-flex align-items-center">
+                    <div class="d-block position-relative align-items-center">
+                        <h3 class="text-black bolder">So, how do we get our reviews?</h3>
+                        <p class="text-white">
+                            Marketers call it organic marketing, Bloggers call them personalized reviews. We
+                            like to call it honest feedback. <span class="newline"></span>
+                            Them again, we can make our mattresses look cool and all, but we choose not to. Bedding stock values
+                            integrity and honesty. And the cost of paid-for reviews might only end up on your invoice.
+                            <span class="newline"></span>
+                            We will not let that happen.
+                            <span class="newline" style="margin-bottom:2vw;"></span>
+                            <a href="/real-reviews" style="text-decoration:none;color:white" >
+                                <span class="read-bedding-button">READ BEDDING STOCK REVIEWS</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}

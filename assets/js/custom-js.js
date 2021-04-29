@@ -31,7 +31,7 @@ window.onload = function(){
         var top = parseInt(navpage_header[0].offsetHeight) - 29;
         global_container[0].style.top =  top + 'px';
         global_container[0].style.position = 'relative';
-    }else if(path == '/comparison/' ||path == '/setup-care-instructions/' || path == '/faqs/' || path == '/shipping-transit-chart/' || path == '/product-certification-features/'){
+    }else if(path == '/comparison/' ||path == '/setup-care-instructions/' || path == '/faqs/' || path == '/shipping-transit-chart/' || path == '/product-certification-features/' || path == '/fake-reviews/'){
         let top = parseInt(navpage_header[0].offsetHeight);
         global_container[0].style.top = top + 'px';
         global_container[0].style.position = 'relative';
@@ -53,7 +53,7 @@ window.onresize = function(){
     }else if(path == '/blog/'){
         var top = parseInt(navpage_header[0].offsetHeight) - 20;
         global_container[0].style.top =  top + 'px';
-    }else if(path == '/setup-care-instructions/' || path == '/faqs/' || path == '/shipping-transit-chart/' || path == '/product-certification-features/' || path == '/comparison/'){
+    }else if(path == '/setup-care-instructions/' || path == '/faqs/' || path == '/shipping-transit-chart/' || path == '/product-certification-features/' || path == '/comparison/' || path == '/fake-reviews/'){
         let top = parseInt(navpage_header[0].offsetHeight);
         global_container[0].style.top = top + 'px';
     }

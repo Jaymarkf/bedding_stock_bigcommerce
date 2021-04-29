@@ -1,3 +1,54 @@
+.bolder{
+  font-weight: 900;
+}
+.bold{
+  font-weight:500;
+}
+.text-light-blue{
+  color:#00abc9;
+}
+.text-black{
+  color: #131313;
+}
+.text-gray{
+  color:#666666;
+}
+.text-white{
+  color:white;
+}
+.absolute-flex-w-100-center{
+  position:absolute;
+  width: 100%;
+  height:100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  left:0;
+  top:0;
+}
+.absolute-flex-w-100-first{
+ position:absolute;
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items: center;
+  justify-content: flex-start;
+  top:0;
+  left:0;
+}
+.absolute-flex-w-100-end{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
+  top:0;
+  left:0;
+}
+.text-small{
+  font-size:1.4rem;
+}
 //comparison
 .comparison-container{
 
@@ -120,8 +171,10 @@
     color:black;
   }
   .pads-3{
-    padding-left:10vw;
-    padding-right:10vw;
+    padding:0 10vw;
+    @media(max-width:731px) {
+
+    }
     .fa-check-circle,.fa-times-circle{
         font-size:1.4rem;
     }
@@ -147,9 +200,11 @@
 
   }
   .sleep-container{
+
       .lefts{
         padding-left:10vw;
         padding-right:5px;
+
         @media(max-width:1081px){
           padding-left:3vw;
           padding-right:5px;
@@ -158,11 +213,17 @@
       .rights{
         padding-left:5px;
         padding-right:10vw;
+        @media(max-width:846px){
+          padding-left:20px !important;
+        }
         .button-view-product{
           background-color: #e92828;
           color:white;
           padding:13px;
           font-size:1.2rem;
+          @media(max-width:846px){
+            font-size:1rem;padding:9px;
+          }
           @media(max-width:731px){
             font-size:1.3rem;
             text-align: center;
@@ -212,4 +273,119 @@
       }
     }
   }
+}
+
+//fake reviews
+.fake-reviews-container{
+  #banner1{
+    @media(max-width:650px){
+      width:auto !important;
+      height:calc(100vw - 200px);
+    }
+    @media(max-width:400px){
+      width:auto;
+      height:250px !important;
+    }
+  }
+      .absolute-flex-w-100-first{
+          .d-block{
+            padding-left:12%;
+            h1{
+              font-family: Poppins;
+              @media(max-width:400px){
+                font-size:10vw !important;
+              }
+            }
+            .text-small{
+              @media(max-width:400px){
+                font-size:4vw;
+              }
+            }
+          }
+      }
+      .row3,row4{
+          .h2{
+            font-family: Poppins;
+          }
+        p{
+          font-size:1.2rem;
+        }
+      }
+      .row4{
+        overflow:hidden;
+        padding:0 15vw;
+        @media(max-width:1024px){
+          padding:0 10vw;
+        }
+        .icon-container{
+          text-align:center;
+          padding:0 8.5vw;
+        }
+        .text-gray{
+          text-align:center;
+          padding:0 5vw;
+        }
+        .col{
+          border:1px solid gray;
+          border: 1px solid #e5e5e542;
+          box-shadow: 3px 6px 7px 1px #e5e5e5;
+          border-radius: 15px;
+          margin:0 5px;
+          padding-top:2vw;
+          margin: 1vw 1vw;
+          @media(max-width:731px){
+            margin:2vw 2vw;
+          }
+        }
+      }
+      .row5{
+        .col{
+          #banner2{
+            @media(max-width:650px){
+              width:auto !important;
+              height:100% !important;
+            }
+            @media(max-width:400px){
+              width:auto;
+              //height:500px !important;
+            }
+          }
+        }
+        .absolute-flex-w-100-center{
+          .bolder{
+            background-color: rgba(0, 0, 0, 0.69);
+            padding: 20px;
+            font-size:1.8vw;
+            @media(max-width:540px){
+              font-size:2.4vw;
+            }
+          }
+        }
+      }
+      .row6{
+        padding-bottom:10vw;
+        background-color:#53bcc1;
+        .d-flex{
+          @media(max-width:731px){
+            text-align:center;
+            padding:0 10vw;
+          }
+        }
+        .d-block{
+          padding-right:10vw;
+          a{
+            &:hover{
+              color: #e25959;
+            }
+          }
+        }
+        .read-bedding-button{
+          margin-top:10px;
+          background-color:red;
+          padding:15px;
+        }
+
+      }
+
+
 }
