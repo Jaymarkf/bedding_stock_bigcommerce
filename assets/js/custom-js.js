@@ -70,7 +70,7 @@ setInterval(function(){
        }
    }
 
-},500);
+},0);
 
 $(document).ready(function(){
     var coll =  document.getElementsByClassName("collapsible");
@@ -88,4 +88,6 @@ $(document).ready(function(){
             }
         });
     }
+    $('img').addClass('lazyload');
 });
+

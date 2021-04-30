@@ -10,8 +10,8 @@
     <div class="col-12">
         <p id="click_blog_post"><span class="fa fa-clock-o"></span>&nbsp;{{#if post.author}}{{lang 'blog.posted_by' name=post.author}} on {{/if}}{{post.date_published}}</p>
     </div>
-    <div class="row">
-       <div class="col-6 blog-post-col-6">
+    <div class="row" data-aos="fade-right" data-aos-duration="1000">
+       <div class="col-6 blog-post-col-6" >
            {{#if post.thumbnail}}
            <a href="{{post.url}}">
                <img src="{{getImage post.thumbnail}}" class="img-fluid" alt="">

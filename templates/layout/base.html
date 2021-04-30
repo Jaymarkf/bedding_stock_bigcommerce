@@ -69,11 +69,23 @@
         {{~inject 'carouselActiveDotAriaLabel' (lang 'carousel.active_dot_aria_label')}}
         {{~inject 'carouselContentAnnounceMessage' (lang 'carousel.content_announce_message')}}
     </head>
+    <script>
+        $(window).on('load',function() {
+            $(".loader-master").hide();
+            setTimeout(function(){
+                $('html, body').scrollTop(0);
+            },0);
+            $("body").css("overflow","visible");
+        });
+    </script>
     <body>
-
+    <div class="loader-master">
+        <div class="loader-inner">
+            <div class="loader"></div>
+        </div>
+    </div>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
-
         {{> components/common/header }}
         {{> components/common/body }}
         {{> components/common/footer }}
@@ -91,6 +103,8 @@
 </html>
 
 <script>
+
+
   $(document).ready(function(){
       AOS.init();
       if(window.location.pathname == '/about-us/'){
@@ -102,9 +116,9 @@
           });
       }
 
+
   });
 
 
-
-
 </script>
+
